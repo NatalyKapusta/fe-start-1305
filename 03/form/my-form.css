@@ -1,0 +1,46 @@
+*{
+    color: rgb(28, 0, 128);
+}
+body{
+    background-color: rgb(222, 239, 137);
+}
+
+h3{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+p{
+    color: white;
+    text-align: center;
+}
+h3{
+    color: white;
+text-align: center;
+}
+
+p,h3,h4,h5{
+    color: white;
+    text-align: center;
+}
+
+/* DRY don't repeat yourself */
+p span{
+    color: rgb(0, 255, 47);
+}
+li span{
+    color: blue;
+}
+
+div h3{
+    color: rgb(222, 163, 14);
+}
+section h3{
+    color: rgb(236, 9, 9);
+}
+h3{
+    color: aquamarine;
+}
+label{color: brown;}
+input{color: blueviolet;}
