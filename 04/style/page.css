@@ -1,0 +1,97 @@
+/* header h3{
+    background-color: yellow;
+    text-align: center;
+} */
+/* div h3, section h3, main h3{
+    background-color: red;
+    color: white;
+} */
+.title{
+    background-color: red;
+    color: white;
+}
+/* nav ul li a{
+    color: yellow;
+    background-color: blue;
+} */
+
+.list-link{
+    color: yellow;
+    background-color: blue;
+}
+.ig-linc{
+    font-size: 25px;
+}
+.sm-link{
+    font-size: 10px;
+}
+
+.list-link.ig-linc{
+    text-transform: uppercase;
+    /* text-transform: lowercase; */
+    /* text-transform: capitalize; */
+
+}
+#top{
+    background-color: green;
+    padding: 50px;
+}
+
+.title{
+    background-color: blueviolet;
+    text-align: center;
+    color: yellow;
+}
+
+.title{
+    background-color: rgb(4, 4, 4);
+    text-align: center;
+    color: yellow;
+}
+
+h3{
+    background-color: orange;
+    color: white;
+    text-align: right;
+}
+
+input[type=text]{
+    background-color: red;
+}
+div:empty{
+padding: 100px;
+background-color: orange;
+border: 2px solid black;
+}
+.Li-item{
+    background-color: yellow;
+}
+/* .Li-item.last{
+    background-color: blue;
+}
+.Li-item.first{
+    background-color: green;
+}
+.Li-item.third{
+    background-color: palevioletred;
+} */
+
+.Li-item:first-child{
+    background-color: green;
+}
+.Li-item:nth-child(3){
+    background-color: palevioletred;
+}
+.Li-item:nth-child(4){
+    background-color: rgb(4, 108, 28);
+}
+.Li-item:last-child{
+    background-color: blue;
+}
+
+.main-title{
+color: rgb(0, 0, 0);
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+}
