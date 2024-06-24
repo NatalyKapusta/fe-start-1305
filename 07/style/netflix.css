@@ -1,0 +1,243 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+.inter-100 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+
+
+body{
+    background-size: cover;
+    background-image: url(../img/Rectangle\ 1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+  
+}
+
+header{
+  margin-top: 42px;
+  margin-bottom: 115px;
+  
+}
+
+.container{
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 33px 0px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-none{
+  background-color: transparent;
+  border: none;
+  margin-right: 16px;
+  color: #fff;
+}
+
+img{
+  margin-right: 16px;
+}
+
+.header-left{
+  display: flex;
+ align-items: center;
+  gap: 42px;
+}
+
+.header-right{
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.content-thumb{
+  width: 911px;
+  margin-bottom: 35px;
+}
+
+.genres-container{
+    margin-bottom: 26px;
+}
+
+.genres{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.info{
+    font-size: 29px;
+    font-weight: 400;
+    margin-bottom: 19px;
+}
+
+.info-gray{
+  color:  #a7a6a6 ;
+
+}
+  
+.film-description{
+    color: #a7a6a6;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+
+  .raiting{
+  display: flex;
+  margin-bottom: 55px;
+  gap: 14px;
+}
+
+  .star-item {
+    color: #ffea2b;
+  }
+
+
+  .star-item_non-active {
+    color: #fff;
+  }
+
+  .buttons-list{
+      display: flex;
+      gap: 50px;
+      margin-bottom: 54px;
+  }
+ 
+
+  .primary-btn {
+    display: flex;
+    border: none;
+    gap: 18px;
+    align-items: center;
+    background-color: #d40d1f;
+    padding: 11px 31px;
+    color: #fff;
+    border-radius: 10px;
+    
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    border: 3px solid #fff;
+    padding: 16px 48px;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+  .popular-container{
+display: flex;
+letter-spacing: 2px;
+  }
+
+    h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+
+
+  .slider-arrows{
+      display: flex;
+      gap: 24px;
+      margin-left: auto;
+     }
+  
+  .arrow-btn {
+    width: 33px;
+    height: 33px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid #a7a6a6;
+    color: #a7a6a6;
+  }
+
+
+  .popular-list{
+    display: flex;
+    gap: 25px;
+    
+  }
+
+  .corner-box{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+.test{
+background-color: gray;
+color: #fff;
+border: none;
+width: 174px;
+height: 66px;
+
+padding: 15px;
+font-size: 24px;
+}
+
+.span{
+background-color: #d40d1f;
+  color: #fffdfd;
+  width: 33px;
+  height: 66px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.test-left{
+margin-top: 650px;
+position: absolute;
+right: 0%;
+}
+
+  
+ 
+
+
+
+
+
+  
+  
+
+  
+ 
+  
+  
+  
