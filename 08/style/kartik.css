@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+width: 1440px;
+
+}
+
+:root{
+background-color:rgba(30, 37, 41, 1.00) ;
+--font-size-color:white;
+--primary-color:gray;
+--baze-color:rgb(255 183 66);
+}
+
+
+.img{
+    display: flex;
+   
+}
+
+
+.home{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    border: none;
+    gap: 25px;
+    font-size: 18px;
+   
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-size-color)
+}
+
+.header{
+    width: 1342px;
+    align-content: center;
+   margin: 17px 54px 0px 44px;
+  
+    display: flex;
+    justify-content: space-between;
+}
+
+header{
+    width: 1342px;
+    height: 66px;
+}
+
+.hireme{
+  border-radius: 25px;
+   width: 121px;
+   height: 54px;
+   padding: 12px 26px;
+   font-size: 18px;
+   background-color: var(--baze-color);
+}
+
+.hover:hover{
+    color: var(--baze-color);
+}
+
+.text{
+    color: var(--baze-color);
+    text-decoration: underline;
+}
+
+.hi{
+    font-size: 32px;
+    width: 963px;
+    height: 458px;
+}
+
+section{
+    color: var(--font-size-color);
+    width: 1306px;
+    margin-top: 112px;
+  text-align: center;
+   
+}
+
+.icons{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    width: 429px;
+    height: 123px;
+border-radius: 10px;
+    background-color:rgb(41, 43, 46)   ;
+   border: none;
+   
+}
+.icons:hover{
+    background-color: var(--baze-color);
+}
+
+
+.number{
+    font-size: 32px;
+    
+}
+.group{
+    padding-left: 30px;
+ align-items: center;
+}
+
+.iconnumber{
+    padding-left: 57px;}
+
+    .entypo{
+        padding-left: 60px;}
+    
+        .container{
+            display: flex;
+            justify-content: space-between;
+            width: 1345px;
+            height: 123px;
+           text-align: center;
+           margin-top: 130px;
+        }
+
+        .whoiam{
+            display: flex;
+            text-align: left;
+            width: 1345px;
+            height: 123px;
+        }
+
+        .am{
+            width: 517px;
+            height: 535px;
+        }
+
+        .me{
+            width: 682px;
+            height: 426px;
+            margin-left: 133px;
+            margin-top: 40px;
+            margin-bottom: 68px;
+        }
+
+      h5{
+        color: var(--baze-color);
+        
+      }
+
+      button{
+        width: 148px;
+        height: 42px;
+        border-radius: 15px;
+        border: none;
+        background-color:rgb(41, 43, 46) 
+        
+        
+      }
+
+      .myskills{
+        width: 1339px;
+        height: 378px;
+        display: flex;
+      }
+
+      
