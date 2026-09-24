@@ -18,208 +18,183 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/style.css">
+    <script>document.documentElement.classList.add('js');</script>
 
     <!-- Meta Pixel (Facebook / Instagram реклама): вставити код пікселя сюди -->
 </head>
 <body>
     <!-- Шапка -->
     <header class="header">
-        <div class="container header__inner">
-            <a href="#" class="logo">
+        <div class="container">
+            <div class="logo">
                 <img src="img/logo-mark-white.png" alt="" class="logo__img">
                 <span class="logo__text">
                     <span class="logo__name">VITAMIN</span>
                     <span class="logo__sub">premium fitness club</span>
                 </span>
-            </a>
-            <a href="tel:+380504047989" class="header__phone">+38 (050) 404 79 89</a>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- 1. Хук -->
         <section class="hero" id="hero">
-            <div class="container hero__inner">
-                <p class="hero__hook">Думаєш, у Vitamin є тільки повна картка з усіма послугами? <b>Уже ні.</b></p>
-                <h1 class="hero__title">
+            <div class="container">
+                <p class="hero__hook appear">Думаєш, у Vitamin є тільки повна картка? <b>Уже ні.</b></p>
+                <h1 class="hero__title appear">
                     Клубна картка —<br>
                     тільки тренажерний зал
                 </h1>
-                <div class="hero__offer">
-                    <p class="hero__price"><span class="accent">310 грн</span> <span class="hero__price-unit">за відвідування</span></p>
-                    <div class="badge hero__badge">
-                        <span class="badge__small">додатковий бонус</span>
-                        <span class="badge__big">3 сауни</span>
+                <p class="hero__price appear">
+                    <span class="accent"><span data-count="310">310</span> грн</span>
+                    <span class="hero__price-unit">за відвідування</span>
+                </p>
+
+                <!-- Бонус: 3 сауни -->
+                <div class="bonus appear">
+                    <div class="bonus__icon">+3</div>
+                    <div class="bonus__body">
+                        <p class="bonus__label">Бонус до картки</p>
+                        <p class="bonus__title">3 сауни включено</p>
+                        <ul class="bonus__tags">
+                            <li class="bonus__tag">фінська</li>
+                            <li class="bonus__tag">римська</li>
+                            <li class="bonus__tag">інфрачервона</li>
+                        </ul>
                     </div>
                 </div>
-                <p class="hero__text">Більше не треба переплачувати за те, чим не користуєшся.</p>
-                <a href="#form" class="btn">Хочу картку</a>
+
+                <p class="hero__text appear">Більше не треба переплачувати за те, чим не користуєшся.</p>
+                <a href="#form" class="btn btn--pulse appear">Хочу картку</a>
             </div>
         </section>
 
-        <!-- 2. Біль -->
-        <section class="pain">
-            <div class="container">
-                <h2 class="section-title">Знайомо?</h2>
-                <ul class="pain__list">
-                    <li class="pain__item">Купуєш повну картку, а ходиш тільки в тренажерку</li>
-                    <li class="pain__item">Басейн і групові — не для тебе, але в ціну вони входять</li>
-                    <li class="pain__item">Давно хотілося картку саме на зал — без зайвого</li>
-                </ul>
-                <p class="pain__answer">Ми почули. Тепер є <span class="accent">окрема картка</span> — тільки тренажерний зал.</p>
-            </div>
-        </section>
-
-        <!-- 3. Що входить -->
+        <!-- 2. Що входить -->
         <section class="include">
             <div class="container">
-                <h2 class="section-title">Що входить у картку</h2>
+                <h2 class="section-title reveal">Платиш тільки за те, чим користуєшся</h2>
                 <div class="include__grid">
                     <ul class="include__list">
-                        <li class="include__item include__item--yes">Тренажерна зала 630 м²</li>
-                        <li class="include__item include__item--yes">Кардіо-зона</li>
-                        <li class="include__item include__item--yes">Інструктаж у тренажерному та кардіозалах</li>
-                        <li class="include__item include__item--yes">Фінська, римська та інфрачервона сауни — бонусом</li>
+                        <li class="include__item include__item--yes reveal">Тренажерна зала 630 м²</li>
+                        <li class="include__item include__item--yes reveal">Кардіо-зона</li>
+                        <li class="include__item include__item--yes reveal">Інструктаж від тренера</li>
+                        <li class="include__item include__item--yes reveal">3 сауни — бонусом</li>
                     </ul>
                     <ul class="include__list">
-                        <li class="include__item include__item--no">Басейн</li>
-                        <li class="include__item include__item--no">Групові програми</li>
+                        <li class="include__item include__item--no reveal">Басейн</li>
+                        <li class="include__item include__item--no reveal">Групові програми</li>
                     </ul>
                 </div>
-                <p class="include__note">Платиш тільки за те, чим реально користуєшся.</p>
             </div>
         </section>
 
-        <!-- 4. Зал -->
+        <!-- 3. Зал -->
         <section class="gym">
             <div class="container">
-                <h2 class="section-title">Найбільша тренажерна зала в Полтаві</h2>
-                <p class="section-text">630 м² і топові тренажери світових брендів: <b>Nautilus, Star Trac, Life Fitness, Cybex</b>.</p>
+                <h2 class="section-title reveal">Найбільша тренажерна зала в Полтаві</h2>
+                <p class="section-text reveal">Топові тренажери <b>Nautilus, Star Trac, Life Fitness, Cybex</b></p>
+            </div>
+            <div class="gallery-wrap">
                 <div class="gallery">
-                    <img src="img/gym-hall.jpg" alt="Тренажерна зала Vitamin" class="gallery__img gallery__img--wide" loading="lazy">
-                    <img src="img/gym-strength.jpg" alt="Силові тренажери" class="gallery__img" loading="lazy">
+                    <img src="img/gym-hall.jpg" alt="Тренажерна зала Vitamin" class="gallery__img" loading="lazy">
                     <img src="img/gym-functional.jpg" alt="Зона функціональних тренувань" class="gallery__img" loading="lazy">
+                    <img src="img/gym-strength.jpg" alt="Силові тренажери" class="gallery__img" loading="lazy">
+                    <img src="img/sauna-finnish.jpg" alt="Фінська сауна" class="gallery__img" loading="lazy">
                     <img src="img/gym-cardio-2.jpg" alt="Кардіо-зона" class="gallery__img" loading="lazy">
                     <img src="img/gym-boxing.jpg" alt="Зона боксу з рингом" class="gallery__img" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- 5. Сауни -->
-        <section class="sauna">
-            <div class="container sauna__inner">
-                <div class="sauna__content">
-                    <h2 class="section-title">+ 3 сауни бонусом</h2>
-                    <ul class="sauna__list">
-                        <li><b>Фінська</b> — сухий жар, прогріває тіло та зміцнює імунітет</li>
-                        <li><b>Римська (парова)</b> — ідеальна для відновлення після тренування</li>
-                        <li><b>Інфрачервона</b> — детокс та прискорений обмін речовин</li>
-                    </ul>
-                    <p class="section-text">Холодний басейн для контрасту та зона відпочинку з чаєм. Жіночі та чоловічі години — для максимального комфорту.</p>
-                </div>
-                <img src="img/sauna-finnish.jpg" alt="Фінська сауна" class="sauna__img" loading="lazy">
-            </div>
-        </section>
-
-        <!-- 6. Порівняння ціни -->
-        <section class="compare">
+        <!-- 4. Цифри -->
+        <section class="numbers">
             <div class="container">
-                <h2 class="section-title">Порахуй сам</h2>
-                <div class="compare__grid">
+                <div class="compare reveal">
                     <div class="compare__card">
-                        <p class="compare__label">Одне групове заняття в студії поруч</p>
-                        <p class="compare__price">300–400 грн</p>
+                        <p class="compare__label">Групове заняття в студії поруч</p>
+                        <p class="compare__price"><span data-count="300">300</span>–<span data-count="400">400</span> грн</p>
                         <p class="compare__text">одне заняття за розкладом</p>
                     </div>
+                    <div class="compare__vs">vs</div>
                     <div class="compare__card compare__card--accent">
-                        <p class="compare__label">Одне відвідування у Vitamin</p>
-                        <p class="compare__price">310 грн</p>
-                        <p class="compare__text">весь тренажерний зал + 3 сауни</p>
+                        <p class="compare__label">Відвідування у Vitamin</p>
+                        <p class="compare__price"><span data-count="310">310</span> грн</p>
+                        <p class="compare__text">весь зал + 3 сауни, скільки завгодно часу</p>
+                    </div>
+                </div>
+                <div class="facts">
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="23">23</span></p>
+                        <p class="fact__text">роки на ринку</p>
+                    </div>
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="2500">2500</span> м²</p>
+                        <p class="fact__text">клуб у центрі</p>
+                    </div>
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="630">630</span> м²</p>
+                        <p class="fact__text">тренажерна зала</p>
+                    </div>
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="3">3</span></p>
+                        <p class="fact__text">сауни бонусом</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Довіра -->
-        <section class="facts">
-            <div class="container facts__grid">
-                <div class="fact">
-                    <p class="fact__num">23</p>
-                    <p class="fact__text">роки на ринку фітнесу</p>
-                </div>
-                <div class="fact">
-                    <p class="fact__num">2500 м²</p>
-                    <p class="fact__text">здорового способу життя</p>
-                </div>
-                <div class="fact">
-                    <p class="fact__num">630 м²</p>
-                    <p class="fact__text">тренажерна зала</p>
-                </div>
-                <div class="fact">
-                    <p class="fact__num">3</p>
-                    <p class="fact__text">сауни бонусом</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Хвиляста стрічка -->
+        <!-- Хвиляста стрічка, текст біжить -->
         <div class="ribbon" aria-hidden="true">
             <svg class="ribbon__svg" viewBox="0 0 1200 160" preserveAspectRatio="none">
                 <path id="wave" d="M-20,90 C150,10 300,10 450,80 S750,150 900,80 S1100,10 1220,70" fill="none" stroke="#dbfa05" stroke-width="56" stroke-linecap="round"/>
-                <text class="ribbon__text"><textPath href="#wave" startOffset="3%">Купуй картку та розпочинай тренування! &#160;•&#160; Купуй картку та розпочинай тренування! &#160;•&#160; Купуй картку та розпочинай тренування!</textPath></text>
+                <text class="ribbon__text"><textPath href="#wave" id="ribbon-text">Купуй картку та розпочинай тренування! • Купуй картку та розпочинай тренування! • Купуй картку та розпочинай тренування! • Купуй картку та розпочинай тренування! • </textPath></text>
             </svg>
         </div>
 
-        <!-- 8. Форма -->
+        <!-- 5. Форма -->
         <section class="order" id="form">
             <div class="container order__inner">
-                <div class="order__content">
+                <div class="order__content reveal">
                     <h2 class="section-title">Залиш заявку — розкажемо деталі</h2>
                     <p class="section-text">Менеджер зателефонує, відповість на питання та допоможе оформити картку.</p>
                 </div>
-                <form class="form" id="lead-form" novalidate>
-                    <label class="form__field">
-                        <span class="form__label">Ім'я</span>
-                        <input type="text" name="name" class="form__input" placeholder="Ваше ім'я" autocomplete="given-name" required>
-                    </label>
-                    <label class="form__field">
-                        <span class="form__label">Телефон</span>
-                        <input type="tel" name="phone" class="form__input" placeholder="+380 __ ___ __ __" autocomplete="tel" inputmode="tel" required>
-                    </label>
-                    <p class="form__error" id="form-error"></p>
-                    <button type="submit" class="btn form__btn">Відправити</button>
-                    <p class="form__policy">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
-                </form>
-                <div class="form-success" id="form-success" hidden>
-                    <p class="form-success__title">Дякуємо!</p>
-                    <p>Ми зателефонуємо найближчим часом.</p>
+                <div class="reveal">
+                    <form class="form" id="lead-form" data-offer="Клубна картка — тільки тренажерний зал" novalidate>
+                        <label class="form__field">
+                            <span class="form__label">Ім'я *</span>
+                            <input type="text" name="name" class="form__input" placeholder="Ваше ім'я" autocomplete="given-name" required>
+                        </label>
+                        <label class="form__field">
+                            <span class="form__label">Телефон *</span>
+                            <input type="tel" name="phone" class="form__input" placeholder="+380 __ ___ __ __" autocomplete="tel" inputmode="tel" required>
+                        </label>
+                        <p class="form__error" id="form-error"></p>
+                        <button type="submit" class="btn form__btn">Відправити</button>
+                        <p class="form__policy">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
+                    </form>
+                    <div class="form-success" id="form-success" hidden>
+                        <p class="form-success__title">Дякуємо!</p>
+                        <p>Ми зателефонуємо найближчим часом.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 9. Питання -->
+        <!-- 6. Питання -->
         <section class="faq">
             <div class="container">
-                <h2 class="section-title">Часті питання</h2>
-                <details class="faq__item">
+                <h2 class="section-title reveal">Часті питання</h2>
+                <details class="faq__item reveal">
                     <summary class="faq__question">Я новачок. Мені підійде?</summary>
                     <p class="faq__answer">Так. У картку входить інструктаж у тренажерному та кардіозалах — покажемо тренажери та правильну техніку.</p>
                 </details>
-                <details class="faq__item">
+                <details class="faq__item reveal">
                     <summary class="faq__question">Коли можна тренуватися?</summary>
                     <p class="faq__answer">ПН–ПТ з 07:00 до 21:00, СБ–НД з 09:00 до 17:00.</p>
                 </details>
-                <details class="faq__item">
+                <details class="faq__item reveal">
                     <summary class="faq__question">Коли працюють сауни?</summary>
-                    <p class="faq__answer">За розкладом: є жіночі та чоловічі години. Точний розклад — на рецепції або у менеджера.</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__question">А якщо захочу ще басейн і групові?</summary>
-                    <p class="faq__answer">У клубі є й повні клубні карти. Менеджер допоможе обрати формат.</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__question">Де знаходиться клуб?</summary>
-                    <p class="faq__answer">м. Полтава, вул. Пилипа Орлика, 40 — у центрі міста.</p>
+                    <p class="faq__answer">За розкладом: є жіночі та чоловічі години. Точний розклад розповість менеджер.</p>
                 </details>
             </div>
         </section>
@@ -227,17 +202,9 @@
 
     <!-- Підвал -->
     <footer class="footer">
-        <div class="container footer__inner">
-            <div>
-                <p class="footer__title">Fitness Club Vitamin</p>
-                <p>м. Полтава, вул. Пилипа Орлика, 40</p>
-                <p>ПН–ПТ 07:00–21:00, СБ–НД 09:00–17:00</p>
-            </div>
-            <div class="footer__links">
-                <a href="tel:+380504047989" class="footer__link">+38 (050) 404 79 89</a>
-                <a href="https://www.instagram.com/vitamin_premium_fitness_club" class="footer__link" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://vitamincentr.pl.ua" class="footer__link" target="_blank" rel="noopener">vitamincentr.pl.ua</a>
-            </div>
+        <div class="container">
+            <p class="footer__title">Fitness Club Vitamin</p>
+            <p>м. Полтава, вул. Пилипа Орлика, 40 · ПН–ПТ 07:00–21:00, СБ–НД 09:00–17:00</p>
         </div>
     </footer>
 

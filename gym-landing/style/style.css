@@ -27,6 +27,7 @@ body {
     line-height: 1.5;
     color: var(--white);
     background-color: var(--bg);
+    overflow-x: hidden;
 }
 
 img {
@@ -35,7 +36,7 @@ img {
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 0 16px;
 }
@@ -45,20 +46,20 @@ img {
 }
 
 section {
-    padding: 64px 0;
+    padding: 48px 0;
 }
 
 .section-title {
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 36px;
+    font-size: 34px;
     line-height: 1.1;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .section-text {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--grey);
     margin-bottom: 24px;
 }
@@ -69,7 +70,7 @@ section {
 
 .btn {
     display: inline-block;
-    padding: 18px 40px;
+    padding: 18px 44px;
     font-family: var(--font-title);
     font-weight: 700;
     font-size: 20px;
@@ -88,6 +89,10 @@ section {
     box-shadow: 0 8px 24px rgba(219, 250, 5, 0.35);
 }
 
+.btn--pulse {
+    animation: pulse 2.2s ease-out infinite;
+}
+
 /* Шапка */
 .header {
     position: absolute;
@@ -95,26 +100,17 @@ section {
     left: 0;
     right: 0;
     z-index: 10;
-}
-
-.header__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding: 20px 0;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--white);
-    text-decoration: none;
 }
 
 .logo__img {
-    width: 40px;
+    width: 36px;
 }
 
 .logo__text {
@@ -125,41 +121,48 @@ section {
 .logo__name {
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 2px;
     line-height: 1;
 }
 
 .logo__sub {
-    font-size: 11px;
-}
-
-.header__phone {
-    font-weight: 700;
-    color: var(--white);
-    text-decoration: none;
+    font-size: 10px;
 }
 
 /* 1. Хук */
 .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 0 160px;
-    background:
-        linear-gradient(90deg, rgba(11, 11, 11, 0.95) 0%, rgba(11, 11, 11, 0.6) 60%, rgba(11, 11, 11, 0.3) 100%),
-        linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0) 30%),
-        url('../img/gym-functional.jpg') right center / cover no-repeat;
+    padding: 104px 0 56px;
     overflow: hidden;
+    isolation: isolate;
+}
+
+/* Фото повільно наближається */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: url('../img/gym-functional.jpg') right center / cover no-repeat;
+    animation: slow-zoom 18s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(11, 11, 11, 0.95) 0%, rgba(11, 11, 11, 0.65) 55%, rgba(11, 11, 11, 0.35) 100%),
+        linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0) 35%);
 }
 
 .hero__hook {
     display: inline-block;
-    max-width: 520px;
-    padding: 10px 16px;
-    margin-bottom: 24px;
-    font-size: 16px;
+    padding: 8px 14px;
+    margin-bottom: 18px;
+    font-size: 15px;
     border-left: 4px solid var(--lime);
     background-color: rgba(255, 255, 255, 0.08);
 }
@@ -171,116 +174,132 @@ section {
 .hero__title {
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 64px;
+    font-size: 60px;
     line-height: 1.05;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .hero__price {
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 40px;
+    font-size: 36px;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .hero__price .accent {
-    font-size: 72px;
+    font-size: 68px;
 }
 
 .hero__text {
-    max-width: 320px;
-    font-size: 20px;
-    margin-bottom: 32px;
+    max-width: 360px;
+    font-size: 18px;
+    margin-bottom: 24px;
 }
 
-/* Бейдж «3 сауни» */
-.badge {
+/* Бонус: картка з рамкою, що світиться і обертається */
+.bonus {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 22px 14px 14px;
+    margin-bottom: 20px;
+    border-radius: 22px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.bonus::before {
+    content: '';
+    position: absolute;
+    inset: -150%;
+    z-index: -2;
+    background: conic-gradient(from 0deg, transparent 0 60%, var(--orange) 75%, var(--lime) 90%, transparent 100%);
+    animation: spin 4s linear infinite;
+}
+
+.bonus::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(40, 30, 20, 0.95), rgba(15, 15, 15, 0.95));
+}
+
+.bonus__icon {
+    flex-shrink: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    color: var(--brown);
-    background: url('../img/badge.svg') center / contain no-repeat;
-    transform: rotate(-8deg);
-}
-
-.badge__small {
-    font-family: var(--font-title);
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.badge__big {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1;
-}
-
-.hero__badge {
-    position: absolute;
-    right: 8%;
-    top: 50%;
-    margin-top: -100px;
-}
-
-/* 2. Біль */
-.pain__list {
-    display: grid;
-    gap: 16px;
-    margin-bottom: 32px;
-}
-
-.pain__item {
-    position: relative;
-    padding: 20px 20px 20px 56px;
-    font-size: 18px;
-    background-color: var(--bg-card);
-    border-radius: 16px;
-}
-
-.pain__item::before {
-    content: '✕';
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    color: var(--orange);
-    font-weight: 800;
-}
-
-.pain__answer {
+    width: 64px;
+    height: 64px;
     font-family: var(--font-title);
     font-weight: 700;
     font-size: 28px;
-    line-height: 1.2;
-    text-transform: uppercase;
+    color: var(--bg);
+    background: radial-gradient(circle at 30% 30%, #f4ff7a, var(--lime) 55%, #9fc000);
+    border-radius: 18px;
+    box-shadow: 0 0 24px rgba(243, 114, 45, 0.55);
+    animation: glow 2.4s ease-in-out infinite alternate;
 }
 
-/* 3. Що входить */
+.bonus__label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+}
+
+.bonus__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.bonus__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.bonus__tag {
+    padding: 2px 10px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 100px;
+}
+
+/* 2. Що входить */
 .include__grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 12px;
 }
 
 .include__list {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     align-content: start;
+}
+
+.include__list + .include__list {
+    grid-template-columns: 1fr;
 }
 
 .include__item {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 20px;
-    font-size: 18px;
+    padding: 14px 18px;
+    font-size: 17px;
     font-weight: 700;
     border-radius: 16px;
 }
@@ -290,10 +309,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .include__item--yes {
@@ -319,64 +338,43 @@ section {
     border: 1px solid var(--grey);
 }
 
-.include__note {
-    font-size: 18px;
-    color: var(--grey);
+/* 3. Зал — стрічка фото, що повільно їде */
+.gallery-wrap {
+    overflow: hidden;
 }
 
-/* 4. Зал */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 12px;
+    width: max-content;
+    /* відступ = gap, щоб зсув на -50% був рівно на половину стрічки */
+    padding-right: 12px;
+    animation: gallery-move 40s linear infinite;
+}
+
+.gallery:hover {
+    animation-play-state: paused;
 }
 
 .gallery__img {
-    width: 100%;
-    height: 220px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
     border-radius: 16px;
 }
 
-.gallery__img--wide {
-    grid-column: span 4;
-    height: 420px;
-}
-
-/* 5. Сауни */
-.sauna__inner {
+/* 4. Цифри */
+.compare {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-}
-
-.sauna__list {
-    display: grid;
-    gap: 16px;
-    margin-bottom: 24px;
-    font-size: 18px;
-}
-
-.sauna__list li {
-    padding-left: 20px;
-    border-left: 4px solid var(--orange);
-}
-
-.sauna__img {
-    width: 100%;
-    border-radius: 24px;
-}
-
-/* 6. Порівняння */
-.compare__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .compare__card {
-    padding: 32px;
+    height: 100%;
+    padding: 24px;
     background-color: var(--bg-card);
     border-radius: 24px;
 }
@@ -386,45 +384,58 @@ section {
     background-color: var(--lime);
 }
 
+.compare__vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
 .compare__label {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 15px;
+    margin-bottom: 4px;
 }
 
 .compare__price {
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 56px;
+    font-size: 48px;
     line-height: 1.1;
 }
 
 .compare__text {
     font-weight: 700;
-    font-size: 18px;
 }
 
-/* 7. Довіра */
-.facts__grid {
+.facts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .fact {
-    padding: 24px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 24px;
+    border-radius: 20px;
 }
 
 .fact__num {
     font-family: var(--font-title);
     font-weight: 700;
-    font-size: 44px;
-    color: var(--lime);
+    font-size: 40px;
     line-height: 1.1;
+    color: var(--lime);
+    white-space: nowrap;
 }
 
 .fact__text {
+    font-size: 15px;
     color: var(--grey);
 }
 
@@ -436,7 +447,7 @@ section {
 .ribbon__svg {
     display: block;
     width: 100%;
-    height: 160px;
+    height: 140px;
 }
 
 .ribbon__text {
@@ -447,7 +458,7 @@ section {
     dominant-baseline: middle;
 }
 
-/* 8. Форма */
+/* 5. Форма */
 .order__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -457,15 +468,16 @@ section {
 
 .form,
 .form-success {
-    padding: 32px;
+    padding: 28px;
     background-color: var(--bg-card);
     border: 2px solid var(--lime);
     border-radius: 24px;
+    box-shadow: 0 0 60px rgba(219, 250, 5, 0.12);
 }
 
 .form {
     display: grid;
-    gap: 16px;
+    gap: 14px;
 }
 
 .form__field {
@@ -488,6 +500,7 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     outline: none;
+    transition: border-color 0.2s;
 }
 
 .form__input:focus {
@@ -496,6 +509,7 @@ section {
 
 .form__input.is-invalid {
     border-color: var(--orange);
+    animation: shake 0.3s;
 }
 
 .form__error {
@@ -531,15 +545,15 @@ section {
     text-transform: uppercase;
 }
 
-/* 9. Питання */
+/* 6. Питання */
 .faq__item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .faq__question {
     position: relative;
-    padding: 20px 40px 20px 0;
-    font-size: 18px;
+    padding: 16px 40px 16px 0;
+    font-size: 17px;
     font-weight: 700;
     cursor: pointer;
     list-style: none;
@@ -553,32 +567,27 @@ section {
     content: '+';
     position: absolute;
     right: 0;
-    top: 14px;
+    top: 10px;
     font-size: 28px;
     color: var(--lime);
+    transition: transform 0.3s;
 }
 
 .faq__item[open] .faq__question::after {
-    content: '−';
+    transform: rotate(45deg);
 }
 
 .faq__answer {
-    padding-bottom: 20px;
+    padding-bottom: 16px;
     color: var(--grey);
 }
 
 /* Підвал */
 .footer {
-    padding: 40px 0 100px;
-    background-color: #000;
+    padding: 28px 0 96px;
+    font-size: 14px;
     color: var(--grey);
-}
-
-.footer__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 24px;
+    background-color: #000;
 }
 
 .footer__title {
@@ -586,83 +595,178 @@ section {
     color: var(--white);
 }
 
-.footer__links {
-    display: grid;
-    gap: 8px;
-}
-
-.footer__link {
-    color: var(--white);
-    text-decoration: none;
-}
-
-.footer__link:hover {
-    color: var(--lime);
-}
-
 /* Кнопка внизу екрана (тільки на телефоні) */
 .sticky-cta {
     display: none;
 }
 
-/* Планшет і телефон */
+/* ---------- Анімації ---------- */
+
+/* Перший екран зʼявляється по черзі */
+.js .appear {
+    opacity: 0;
+    animation: fade-up 0.7s ease-out forwards;
+}
+
+.js .appear:nth-child(2) { animation-delay: 0.1s; }
+.js .appear:nth-child(3) { animation-delay: 0.2s; }
+.js .appear:nth-child(4) { animation-delay: 0.35s; }
+.js .appear:nth-child(5) { animation-delay: 0.5s; }
+.js .appear:nth-child(6) { animation-delay: 0.6s; }
+
+/* Решта блоків — при прокрутці */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.include__item.reveal:nth-child(2) { transition-delay: 0.08s; }
+.include__item.reveal:nth-child(3) { transition-delay: 0.16s; }
+.include__item.reveal:nth-child(4) { transition-delay: 0.24s; }
+.fact.reveal:nth-child(2) { transition-delay: 0.1s; }
+.fact.reveal:nth-child(3) { transition-delay: 0.2s; }
+.fact.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slow-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.12); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 14px rgba(243, 114, 45, 0.35); }
+    to { box-shadow: 0 0 32px rgba(243, 114, 45, 0.8); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(219, 250, 5, 0.55); }
+    70% { box-shadow: 0 0 0 18px rgba(219, 250, 5, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(219, 250, 5, 0); }
+}
+
+@keyframes gallery-move {
+    to { transform: translateX(-50%); }
+}
+
+@keyframes shake {
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* Якщо в системі вимкнені анімації — не рухаємо нічого */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .js .appear,
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .gallery-wrap {
+        overflow-x: auto;
+    }
+}
+
+/* ---------- Планшет ---------- */
 @media (max-width: 900px) {
     .include__grid,
-    .sauna__inner,
     .order__inner {
         grid-template-columns: 1fr;
     }
 
-    .gallery {
-        grid-template-columns: 1fr 1fr;
+    .order__inner {
+        gap: 8px;
     }
 
-    .gallery__img--wide {
-        grid-column: span 2;
-        height: 280px;
-    }
-
-    .facts__grid {
+    .facts {
         grid-template-columns: 1fr 1fr;
     }
 }
 
+/* ---------- Телефон ---------- */
 @media (max-width: 600px) {
     section {
-        padding: 48px 0;
+        padding: 36px 0;
     }
 
     .section-title {
-        font-size: 30px;
-    }
-
-    .header__phone {
-        font-size: 14px;
+        font-size: 28px;
     }
 
     .hero {
-        min-height: 0;
-        align-items: flex-start;
-        padding: 110px 0 48px;
-        background:
-            linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0.55) 40%, rgba(11, 11, 11, 0.85) 100%),
-            url('../img/gym-functional.jpg') center / cover no-repeat;
+        padding: 88px 0 36px;
+    }
+
+    .hero::before {
+        background-position: center;
+    }
+
+    .hero::after {
+        background: linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0.6) 45%, rgba(11, 11, 11, 0.85) 100%);
+    }
+
+    .hero__hook {
+        font-size: 14px;
     }
 
     .hero__title {
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .hero__price {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .hero__price .accent {
         font-size: 56px;
     }
 
+    .hero__price-unit {
+        display: block;
+    }
+
     .hero__text {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    .bonus {
+        display: flex;
+    }
+
+    .bonus__icon {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+
+    .bonus__title {
+        font-size: 20px;
     }
 
     .btn {
@@ -670,57 +774,54 @@ section {
         text-align: center;
     }
 
-    .hero__offer {
-        position: relative;
-    }
-
-    .hero__price-unit {
-        display: block;
-    }
-
-    .hero__badge {
-        width: 130px;
-        height: 130px;
-        right: 0;
-        top: -6px;
-        margin-top: 0;
-    }
-
-    .fact {
-        padding: 20px 16px;
-    }
-
-    .fact__num {
-        font-size: 32px;
-    }
-
-    .badge__small {
-        font-size: 11px;
-    }
-
-    .badge__big {
-        font-size: 24px;
-    }
-
-    .compare__grid {
+    .include__list {
         grid-template-columns: 1fr;
     }
 
-    .compare__price {
-        font-size: 44px;
+    .include__list + .include__list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .include__item {
+        padding: 12px 14px;
+        font-size: 16px;
     }
 
     .gallery__img {
-        height: 160px;
+        width: 220px;
+        height: 150px;
+    }
+
+    .compare {
+        grid-template-columns: 1fr;
+    }
+
+    .compare__vs {
+        margin: -26px auto;
+        position: relative;
+        z-index: 1;
+        background-color: var(--bg);
+    }
+
+    .compare__price {
+        font-size: 40px;
+    }
+
+    .fact {
+        padding: 16px;
+    }
+
+    .fact__num {
+        font-size: 30px;
     }
 
     .ribbon__svg {
-        height: 110px;
+        height: 100px;
     }
 
     .form,
     .form-success {
-        padding: 24px;
+        padding: 22px;
     }
 
     .sticky-cta {

@@ -2,6 +2,10 @@
 // Поки порожньо — форма працює в демо-режимі і заявки нікуди не йдуть.
 const FORM_ENDPOINT = '';
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Форма заявки ---------- */
+
 const form = document.getElementById('lead-form');
 const nameInput = form.elements.name;
 const phoneInput = form.elements.phone;
@@ -17,7 +21,7 @@ new URLSearchParams(location.search).forEach(function (value, key) {
     }
 });
 
-// Маска телефону: +380 XX XXX XX XX
+// Формат телефону: +380 XX XXX XX XX
 function formatPhone(value) {
     let rest = value.replace(/\D/g, '');
 
@@ -67,7 +71,9 @@ form.addEventListener('submit', async function (event) {
     errorBox.textContent = '';
 
     const name = nameInput.value.trim();
-    phoneInput.value = formatPhone(phoneInput.value);
+    if (phoneInput.value.trim()) {
+        phoneInput.value = formatPhone(phoneInput.value);
+    }
     const phone = phoneInput.value.replace(/\D/g, '');
 
     if (name.length < 2) {
@@ -82,7 +88,7 @@ form.addEventListener('submit', async function (event) {
     const data = {
         name: name,
         phone: '+' + phone,
-        offer: 'Річна картка — оплата частинами 2 916 грн/міс',
+        offer: form.dataset.offer,
         page: location.href,
         ...utm,
     };
@@ -112,27 +118,116 @@ form.addEventListener('submit', async function (event) {
         form.hidden = true;
         successBox.hidden = false;
     } catch (error) {
-        errorBox.textContent = 'Не вдалося відправити. Зателефонуйте нам: +38 (050) 404 79 89';
+        errorBox.textContent = 'Не вдалося відправити. Спробуйте ще раз за хвилину.';
         submitBtn.disabled = false;
         submitBtn.textContent = 'Відправити';
     }
 });
 
-// Ховаємо нижню кнопку, поки на екрані перший блок або форма
-const stickyCta = document.querySelector('.sticky-cta');
-const visible = new Set();
+/* ---------- Анімації ---------- */
 
-if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries) {
+// Цифри «набігають» від 0 до потрібного значення
+function countUp(el) {
+    const target = Number(el.dataset.count);
+    const duration = 1400;
+    const start = performance.now();
+
+    function tick(now) {
+        const progress = Math.min(Math.max((now - start) / duration, 0), 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(target * eased).toLocaleString('uk-UA');
+        if (progress < 1) {
+            requestAnimationFrame(tick);
+        }
+    }
+    requestAnimationFrame(tick);
+}
+
+const counters = document.querySelectorAll('[data-count]');
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window && !reduceMotion) {
+    const counterObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                visible.add(entry.target);
-            } else {
-                visible.delete(entry.target);
+                countUp(entry.target);
+                counterObserver.unobserve(entry.target);
             }
         });
-        stickyCta.classList.toggle('is-hidden', visible.size > 0);
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) {
+        counterObserver.observe(el);
     });
-    observer.observe(document.getElementById('hero'));
-    observer.observe(document.getElementById('form'));
+
+    // Блоки плавно зʼявляються при прокрутці
+    const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealItems.forEach(function (el) {
+        revealObserver.observe(el);
+    });
+} else {
+    revealItems.forEach(function (el) {
+        el.classList.add('is-visible');
+    });
+}
+
+// Стрічка фото їде по колу: дублюємо фото, щоб не було розриву
+const gallery = document.querySelector('.gallery');
+
+if (gallery && !reduceMotion) {
+    Array.from(gallery.children).forEach(function (img) {
+        const copy = img.cloneNode();
+        copy.alt = '';
+        copy.setAttribute('aria-hidden', 'true');
+        gallery.appendChild(copy);
+    });
+}
+
+// Текст на хвилястій стрічці біжить
+const ribbonText = document.getElementById('ribbon-text');
+
+if (ribbonText && !reduceMotion) {
+    let offset = 0;
+    let phraseLength = 0;
+
+    function moveRibbon() {
+        if (!phraseLength) {
+            const repeats = ribbonText.textContent.split('•').length - 1;
+            phraseLength = ribbonText.getComputedTextLength() / repeats;
+        }
+        offset -= 0.6;
+        if (offset <= -phraseLength) {
+            offset += phraseLength;
+        }
+        ribbonText.setAttribute('startOffset', offset);
+        requestAnimationFrame(moveRibbon);
+    }
+    requestAnimationFrame(moveRibbon);
+}
+
+/* ---------- Кнопка внизу екрана на телефоні ---------- */
+
+// Ховаємо, поки на екрані перший блок або форма
+const stickyCta = document.querySelector('.sticky-cta');
+const visibleBlocks = new Set();
+
+if ('IntersectionObserver' in window) {
+    const ctaObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                visibleBlocks.add(entry.target);
+            } else {
+                visibleBlocks.delete(entry.target);
+            }
+        });
+        stickyCta.classList.toggle('is-hidden', visibleBlocks.size > 0);
+    });
+    ctaObserver.observe(document.getElementById('hero'));
+    ctaObserver.observe(document.getElementById('form'));
 }
