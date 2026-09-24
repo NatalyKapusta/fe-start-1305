@@ -1,0 +1,726 @@
+/* Кольори як на постері «Оплата частинами»: сіра студія + лайм */
+:root {
+    --bg: #e4e4e9;
+    --bg-dark: #48484f;
+    --grey: #8f8d98;
+    --card: #ffffff;
+    --lime: #dbfe01;
+    --ink: #1c1c21;
+    --ink-soft: #5d5c66;
+    --brown: #3b2400;
+    --white: #ffffff;
+    --font-title: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-text: 'Manrope', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-text);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+    background-color: var(--bg);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+section {
+    padding: 64px 0;
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 640px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    font-family: var(--font-text);
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--brown);
+    background-color: var(--lime);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(160, 190, 0, 0.45);
+}
+
+/* Шапка */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.logo__img {
+    width: 40px;
+}
+
+.logo__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo__name {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo__sub {
+    font-size: 11px;
+}
+
+.header__phone {
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* 1. Хук — сіра «студія» як на постері */
+.hero {
+    padding: 130px 0 72px;
+    color: var(--white);
+    background: radial-gradient(ellipse at 20% 110%, #e0dfe7 0%, #b7b8bd 35%, #828189 70%, #48484f 100%);
+}
+
+.hero__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero__tag {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    background-color: var(--white);
+    border-radius: 100px;
+}
+
+.hero__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero__title-accent {
+    display: block;
+    color: var(--lime);
+}
+
+.hero__sub {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.hero__price {
+    display: inline-block;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+.hero__price-num {
+    display: block;
+    font-family: var(--font-title);
+    font-size: 56px;
+    line-height: 1.05;
+}
+
+.hero__price-unit {
+    font-size: 18px;
+    color: var(--ink-soft);
+}
+
+.hero__text {
+    max-width: 460px;
+    font-size: 18px;
+    margin-bottom: 32px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero__photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.hero__photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero__photo--main {
+    grid-column: span 2;
+    height: 280px;
+}
+
+/* 2. Біль */
+.pain__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.pain__card {
+    padding: 28px;
+    background-color: var(--card);
+    border-radius: 24px;
+}
+
+.pain__card--accent {
+    background-color: var(--lime);
+}
+
+.pain__label {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+}
+
+.pain__card--accent .pain__label {
+    color: var(--brown);
+}
+
+.pain__text {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.pain__card:first-child .pain__text {
+    color: var(--ink-soft);
+    text-decoration: line-through;
+}
+
+/* 3. Що входить */
+.include {
+    background-color: var(--white);
+}
+
+.include__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.include__card {
+    padding: 12px 12px 20px;
+    background-color: var(--bg);
+    border-radius: 24px;
+}
+
+.include__img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.include__title {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 0 8px 8px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    background-color: var(--lime);
+    border-radius: 8px;
+}
+
+.include__text {
+    padding: 0 8px;
+    color: var(--ink-soft);
+}
+
+/* 4. Порахуй */
+.calc__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+    gap: 16px;
+}
+
+.calc__card {
+    padding: 28px;
+    background-color: var(--card);
+    border-radius: 24px;
+}
+
+.calc__card--accent {
+    color: var(--white);
+    background-color: var(--bg-dark);
+}
+
+.calc__num {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.1;
+}
+
+.calc__card--accent .calc__num {
+    color: var(--lime);
+}
+
+.calc__text {
+    font-weight: 700;
+    color: var(--ink-soft);
+}
+
+.calc__card--accent .calc__text {
+    color: var(--white);
+}
+
+/* 5. Як оформити */
+.steps {
+    background-color: var(--white);
+}
+
+.steps__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    list-style: none;
+}
+
+.step {
+    padding: 24px;
+    background-color: var(--bg);
+    border-radius: 24px;
+}
+
+.step__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--brown);
+    background-color: var(--lime);
+    border-radius: 50%;
+}
+
+.step__text {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* 6. Довіра */
+.facts {
+    color: var(--white);
+    background-color: var(--bg-dark);
+}
+
+.facts__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.fact {
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+}
+
+.fact__num {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.1;
+    color: var(--lime);
+}
+
+.fact__text {
+    color: #d0d0d6;
+}
+
+/* 7. Форма */
+.order {
+    background: radial-gradient(ellipse at 80% 0%, #b7b8bd 0%, var(--bg) 60%);
+}
+
+.order__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.order__bank {
+    display: inline-block;
+    padding: 8px 16px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: #43a047;
+    border-radius: 100px;
+}
+
+.form,
+.form-success {
+    padding: 32px;
+    background-color: var(--card);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(72, 72, 79, 0.2);
+}
+
+.form {
+    display: grid;
+    gap: 16px;
+}
+
+.form__field {
+    display: grid;
+    gap: 6px;
+}
+
+.form__label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-soft);
+}
+
+.form__input {
+    width: 100%;
+    padding: 16px 18px;
+    font: inherit;
+    font-size: 18px;
+    color: var(--ink);
+    background-color: var(--bg);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+}
+
+.form__input:focus {
+    border-color: var(--lime);
+    background-color: var(--white);
+}
+
+.form__input.is-invalid {
+    border-color: #e5484d;
+}
+
+.form__error {
+    min-height: 1.5em;
+    font-size: 14px;
+    color: #d93036;
+}
+
+.form__btn {
+    width: 100%;
+}
+
+.form__btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.form__policy {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+}
+
+.form-success {
+    text-align: center;
+}
+
+.form-success__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+/* 8. Питання */
+.faq__item {
+    border-bottom: 1px solid rgba(28, 28, 33, 0.15);
+}
+
+.faq__question {
+    position: relative;
+    padding: 20px 48px 20px 0;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq__question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    color: var(--brown);
+    background-color: var(--lime);
+    border-radius: 50%;
+}
+
+.faq__item[open] .faq__question::after {
+    content: '−';
+}
+
+.faq__answer {
+    padding-bottom: 20px;
+    color: var(--ink-soft);
+}
+
+/* Підвал */
+.footer {
+    padding: 40px 0 100px;
+    color: #d0d0d6;
+    background-color: var(--bg-dark);
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer__title {
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer__links {
+    display: grid;
+    gap: 8px;
+}
+
+.footer__link {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    color: var(--lime);
+}
+
+/* Кнопка внизу екрана (тільки на телефоні) */
+.sticky-cta {
+    display: none;
+}
+
+/* Планшет */
+@media (max-width: 900px) {
+    .hero__inner,
+    .order__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .include__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .steps__list,
+    .facts__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .calc__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .calc__card--accent {
+        grid-column: span 2;
+    }
+}
+
+/* Телефон */
+@media (max-width: 600px) {
+    section {
+        padding: 48px 0;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .header__phone {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 110px 0 48px;
+    }
+
+    .hero__title {
+        font-size: 56px;
+    }
+
+    .hero__title-accent {
+        font-size: 44px;
+    }
+
+    .hero__sub {
+        font-size: 18px;
+    }
+
+    .hero__price-num {
+        font-size: 44px;
+    }
+
+    .hero__text {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero__photo {
+        height: 120px;
+    }
+
+    .hero__photo--main {
+        height: 180px;
+    }
+
+    .pain__grid,
+    .include__grid,
+    .steps__list {
+        grid-template-columns: 1fr;
+    }
+
+    .pain__text {
+        font-size: 18px;
+    }
+
+    .calc__num {
+        font-size: 40px;
+    }
+
+    .fact {
+        padding: 20px 16px;
+    }
+
+    .fact__num {
+        font-size: 32px;
+    }
+
+    .form,
+    .form-success {
+        padding: 24px;
+    }
+
+    .sticky-cta {
+        display: block;
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 20;
+        padding: 16px;
+        font-weight: 800;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--brown);
+        background-color: var(--lime);
+        border-radius: 100px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .sticky-cta.is-hidden {
+        opacity: 0;
+        transform: translateY(120%);
+        pointer-events: none;
+    }
+}
