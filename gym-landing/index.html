@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клубная карта — тренажёрный зал</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">GYM</a>
+            <nav class="nav">
+                <a href="#benefits" class="nav__link">Преимущества</a>
+                <a href="#prices" class="nav__link">Цены</a>
+                <a href="#contacts" class="nav__link">Контакты</a>
+            </nav>
+            <a href="#form" class="btn">Купить карту</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Первый экран -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Клубная карта в тренажёрный зал</h1>
+                <p class="hero__text">Безлимитные тренировки в любое время</p>
+                <a href="#form" class="btn">Оформить карту</a>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="benefits" id="benefits">
+            <div class="container">
+                <h2 class="section-title">Что входит в карту</h2>
+                <div class="benefits__list">
+                    <div class="benefit">Современные тренажёры</div>
+                    <div class="benefit">Свободные веса</div>
+                    <div class="benefit">Раздевалки и душ</div>
+                    <div class="benefit">Вводный инструктаж</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Тарифы -->
+        <section class="prices" id="prices">
+            <div class="container">
+                <h2 class="section-title">Тарифы</h2>
+                <div class="prices__list">
+                    <div class="price-card">
+                        <h3 class="price-card__title">1 месяц</h3>
+                        <p class="price-card__price">— ₽</p>
+                    </div>
+                    <div class="price-card">
+                        <h3 class="price-card__title">6 месяцев</h3>
+                        <p class="price-card__price">— ₽</p>
+                    </div>
+                    <div class="price-card">
+                        <h3 class="price-card__title">12 месяцев</h3>
+                        <p class="price-card__price">— ₽</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма заявки -->
+        <section class="form-section" id="form">
+            <div class="container">
+                <h2 class="section-title">Оставьте заявку</h2>
+                <form class="form">
+                    <input type="text" class="form__input" placeholder="Имя">
+                    <input type="tel" class="form__input" placeholder="Телефон">
+                    <button type="submit" class="btn">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <p>Адрес, телефон, соцсети</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #111;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #ff5a00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 32px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Шапка */
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Первый экран */
+.hero__title {
+    font-size: 56px;
+    margin-bottom: 16px;
+}
+
+.hero__text {
+    font-size: 20px;
+    margin-bottom: 32px;
+}
+
+/* Преимущества */
+.benefits__list,
+.prices__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.benefit,
+.price-card {
+    flex: 1 1 220px;
+    padding: 24px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+}
+
+.price-card__price {
+    font-size: 28px;
+    margin-top: 12px;
+}
+
+/* Форма */
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.form__input {
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Подвал */
+.footer {
+    padding: 32px 0;
+    background-color: #000;
+}
