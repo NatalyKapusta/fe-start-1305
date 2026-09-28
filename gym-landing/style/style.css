@@ -527,6 +527,10 @@ section {
     gap: 14px;
 }
 
+.form__trap {
+    display: none;
+}
+
 .form__field {
     display: grid;
     gap: 6px;

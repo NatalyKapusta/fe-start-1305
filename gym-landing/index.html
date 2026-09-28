@@ -7,10 +7,15 @@
     <meta name="description" content="Окрема клубна картка у Vitamin: тільки тренажерний зал + бонусом фінська, римська та інфрачервона сауни. 310 грн за відвідування.">
 
     <!-- Превʼю при репості посилання в Instagram / Facebook -->
-    <meta property="og:title" content="Клубна картка — тільки тренажерний зал">
-    <meta property="og:description" content="310 грн за відвідування + 3 сауни бонусом. Fitness Club Vitamin, Полтава.">
-    <meta property="og:image" content="img/og-image.jpg">
+    <meta property="og:title" content="Клубна картка — тільки тренажерний зал 💪">
+    <meta property="og:description" content="310 грн за відвідування. 3 сауни включено. Можна частинами — 0%, ПриватБанк.">
+    <meta property="og:image" content="https://promo.vitamincentr.pl.ua/tilky-zal/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://promo.vitamincentr.pl.ua/tilky-zal/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" href="img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +25,19 @@
     <link rel="stylesheet" href="style/style.css">
     <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Meta Pixel (Facebook / Instagram реклама): вставити код пікселя сюди -->
+    <!-- Meta Pixel: вставте ID пікселя з рекламного кабінету в META_PIXEL_ID -->
+    <script>
+        var META_PIXEL_ID = '';
+        if (META_PIXEL_ID) {
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', META_PIXEL_ID);
+            fbq('track', 'PageView');
+        }
+    </script>
 </head>
 <body>
     <!-- Шапка -->
@@ -172,7 +189,18 @@
                     <p class="section-text">Менеджер зателефонує, відповість на питання та допоможе оформити картку.</p>
                 </div>
                 <div class="reveal">
-                    <form class="form" id="lead-form" data-offer="Клубна картка — тільки тренажерний зал" novalidate>
+                    <form class="form" id="lead-form" name="tilky-zal" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-offer="Клубна картка — тільки тренажерний зал" novalidate>
+                        <!-- Службові поля: назва форми для Netlify, звідки заявка -->
+                        <input type="hidden" name="form-name" value="tilky-zal">
+                        <input type="hidden" name="offer">
+                        <input type="hidden" name="page">
+                        <input type="hidden" name="utm_source">
+                        <input type="hidden" name="utm_medium">
+                        <input type="hidden" name="utm_campaign">
+                        <input type="hidden" name="utm_content">
+                        <input type="hidden" name="utm_term">
+                        <input type="hidden" name="fbclid">
+                        <p class="form__trap" hidden><label>Не заповнюйте: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
                         <label class="form__field">
                             <span class="form__label">Ім'я *</span>
                             <input type="text" name="name" class="form__input" placeholder="Ваше ім'я" autocomplete="given-name" required>

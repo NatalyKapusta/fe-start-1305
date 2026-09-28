@@ -1,5 +1,7 @@
-// Куди відправляти заявки (Formspree, Google Apps Script, CRM тощо).
-// Поки порожньо — форма працює в демо-режимі і заявки нікуди не йдуть.
+// Куди відправляти заявки:
+// — форма з data-netlify на Netlify → заявки приймає сам Netlify (нічого вказувати не треба);
+// — інакше адреса Google Apps Script / CRM у FORM_ENDPOINT;
+// — файл, відкритий з компʼютера (file://), працює в демо-режимі.
 const FORM_ENDPOINT = '';
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -96,13 +98,35 @@ form.addEventListener('submit', async function (event) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Відправляємо...';
 
+    // Бот заповнив приховане поле — робимо вигляд, що все добре, і нічого не шлемо
+    const trap = form.elements['bot-field'];
+    const isBot = trap && trap.value;
+
     try {
-        if (FORM_ENDPOINT) {
+        if (isBot || location.protocol === 'file:') {
+            console.warn('Демо-режим: заявка не відправляється.', data);
+        } else if (FORM_ENDPOINT) {
             const response = await fetch(FORM_ENDPOINT, {
                 method: 'POST',
                 // text/plain — щоб Google Apps Script прийняв запит без preflight
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error('Помилка ' + response.status);
+            }
+        } else if (form.hasAttribute('data-netlify')) {
+            // Netlify Forms: заповнюємо службові поля і шлемо форму як звичайну
+            Object.keys(data).forEach(function (key) {
+                if (form.elements[key] && form.elements[key].type === 'hidden') {
+                    form.elements[key].value = data[key];
+                }
+            });
+            form.elements.phone.value = data.phone;
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString(),
             });
             if (!response.ok) {
                 throw new Error('Помилка ' + response.status);
