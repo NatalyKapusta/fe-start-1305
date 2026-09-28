@@ -93,11 +93,6 @@ form.addEventListener('submit', async function (event) {
         ...utm,
     };
 
-    // Галочка «Цікавить оплата частинами» (є не на всіх лендингах)
-    if (form.elements.installments) {
-        data.installments = form.elements.installments.checked ? 'так' : 'ні';
-    }
-
     submitBtn.disabled = true;
     submitBtn.textContent = 'Відправляємо...';
 

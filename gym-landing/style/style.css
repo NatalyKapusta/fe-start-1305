@@ -559,64 +559,6 @@ section {
     animation: shake 0.3s;
 }
 
-.form__check {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: border-color 0.2s, background-color 0.2s;
-}
-
-.form__check:has(.form__checkbox:checked) {
-    border-color: var(--lime);
-    background-color: rgba(219, 250, 5, 0.08);
-}
-
-/* Справжній чекбокс ховаємо, малюємо свій */
-.form__checkbox {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.form__check-box {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    border: 2px solid var(--grey);
-    border-radius: 6px;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.form__checkbox:checked + .form__check-box {
-    border-color: var(--lime);
-    background-color: var(--lime);
-}
-
-.form__checkbox:checked + .form__check-box::after {
-    content: '✓';
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--bg);
-}
-
-.form__checkbox:focus-visible + .form__check-box {
-    outline: 2px solid var(--lime);
-    outline-offset: 2px;
-}
-
-.form__check-icon {
-    width: 22px;
-    height: 22px;
-}
-
 .form__error {
     min-height: 1.5em;
     font-size: 14px;
