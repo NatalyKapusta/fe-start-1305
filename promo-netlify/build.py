@@ -1,8 +1,7 @@
 """Збирає сайт для Netlify: promo.vitamincentr.pl.ua
 
 Структура готового сайту:
-  /tilky-zal/   — лендинг «Клубна картка — тільки тренажерний зал»
-  /_redirects   — з кореня домену одразу ведемо на лендинг
+  /  — лендинг «Клубна картка — тільки тренажерний зал» у корені піддомену
 
 Запуск: python3 promo-netlify/build.py <куди-покласти-zip>
 Результат — zip-архів, який перетягується на app.netlify.com (Deploys).
@@ -15,8 +14,9 @@ import zipfile
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_ZIP = os.path.join(sys.argv[1], 'promo-vitamin-netlify.zip')
 
+# Шлях на сайті → папка лендингу ('' — корінь піддомену)
 LANDINGS = {
-    'tilky-zal': 'gym-landing',
+    '': 'gym-landing',
 }
 # Файли, які на сайт не потрібні
 SKIP = {'brief.md', 'poster.webp', 'poster.jpg', '.DS_Store'}
@@ -37,6 +37,5 @@ with zipfile.ZipFile(OUT_ZIP, 'w', zipfile.ZIP_DEFLATED) as z:
                     continue
                 full = os.path.join(root, name)
                 z.write(full, os.path.join('promo-vitamin', url_path, os.path.relpath(full, src)))
-    z.writestr('promo-vitamin/_redirects', '/  /tilky-zal/  302\n')
 
 print('OK:', OUT_ZIP, os.path.getsize(OUT_ZIP) // 1024, 'KB')
