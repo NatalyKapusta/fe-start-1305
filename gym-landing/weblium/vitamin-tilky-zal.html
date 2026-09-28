@@ -1,0 +1,1465 @@
+<!-- Vitamin — «Тільки тренажерний зал». Вставити цілком у «Фрагмент коду / HTML» -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+.vtm,
+.vtm div,
+.vtm span,
+.vtm applet,
+.vtm object,
+.vtm iframe,
+.vtm h1,
+.vtm h2,
+.vtm h3,
+.vtm h4,
+.vtm h5,
+.vtm h6,
+.vtm p,
+.vtm blockquote,
+.vtm pre,
+.vtm a,
+.vtm abbr,
+.vtm acronym,
+.vtm address,
+.vtm big,
+.vtm cite,
+.vtm code,
+.vtm del,
+.vtm dfn,
+.vtm em,
+.vtm img,
+.vtm ins,
+.vtm kbd,
+.vtm q,
+.vtm s,
+.vtm samp,
+.vtm small,
+.vtm strike,
+.vtm strong,
+.vtm sub,
+.vtm sup,
+.vtm tt,
+.vtm var,
+.vtm b,
+.vtm u,
+.vtm i,
+.vtm center,
+.vtm dl,
+.vtm dt,
+.vtm dd,
+.vtm ol,
+.vtm ul,
+.vtm li,
+.vtm fieldset,
+.vtm form,
+.vtm label,
+.vtm legend,
+.vtm table,
+.vtm caption,
+.vtm tbody,
+.vtm tfoot,
+.vtm thead,
+.vtm tr,
+.vtm th,
+.vtm td,
+.vtm article,
+.vtm aside,
+.vtm canvas,
+.vtm details,
+.vtm embed,
+.vtm figure,
+.vtm figcaption,
+.vtm footer,
+.vtm header,
+.vtm hgroup,
+.vtm menu,
+.vtm nav,
+.vtm output,
+.vtm ruby,
+.vtm section,
+.vtm summary,
+.vtm time,
+.vtm mark,
+.vtm audio,
+.vtm video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.vtm article,
+.vtm aside,
+.vtm details,
+.vtm figcaption,
+.vtm figure,
+.vtm footer,
+.vtm header,
+.vtm hgroup,
+.vtm menu,
+.vtm nav,
+.vtm section {
+	display: block;
+}
+
+.vtm {
+    position: relative;
+    text-align: left;
+	line-height: 1;
+}
+
+.vtm ol,
+.vtm ul {
+	list-style: none;
+}
+
+.vtm blockquote,
+.vtm q {
+	quotes: none;
+}
+
+.vtm blockquote:before,
+.vtm blockquote:after,
+.vtm q:before,
+.vtm q:after {
+	content: '';
+	content: none;
+}
+
+.vtm table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.vtm {
+    --bg: #0b0b0b;
+    --bg-card: #171512;
+    --lime: #dbfa05;
+    --orange: #f3722d;
+    --brown: #441c0f;
+    --white: #ffffff;
+    --grey: #a9a49e;
+    --font-title: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-text: 'Manrope', Arial, sans-serif;
+}
+
+.vtm *,
+.vtm *::before,
+.vtm *::after {
+    box-sizing: border-box;
+}
+
+.vtm {
+    font-family: var(--font-text);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white);
+    background-color: var(--bg);
+    overflow-x: hidden;
+}
+
+.vtm img {
+    display: block;
+    max-width: 100%;
+}
+
+.vtm .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.vtm .accent {
+    color: var(--lime);
+}
+
+.vtm section {
+    padding: 48px 0;
+}
+
+.vtm .section-title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.vtm .section-text {
+    font-size: 17px;
+    color: var(--grey);
+    margin-bottom: 24px;
+}
+
+.vtm .section-text b {
+    color: var(--white);
+}
+
+.vtm .btn {
+    display: inline-block;
+    padding: 18px 44px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--bg);
+    background-color: var(--lime);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vtm .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(219, 250, 5, 0.35);
+}
+
+.vtm .btn--pulse {
+    animation: vtm-pulse 2.2s ease-out infinite;
+}
+
+.vtm .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.vtm .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vtm .logo__img {
+    width: 36px;
+}
+
+.vtm .logo__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.vtm .logo__name {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.vtm .logo__sub {
+    font-size: 10px;
+}
+
+.vtm .hero {
+    position: relative;
+    padding: 104px 0 56px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.vtm .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: url('https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/gym-functional.jpg') right center / cover no-repeat;
+    animation: vtm-slow-zoom 18s ease-in-out infinite alternate;
+}
+
+.vtm .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(11, 11, 11, 0.95) 0%, rgba(11, 11, 11, 0.65) 55%, rgba(11, 11, 11, 0.35) 100%),
+        linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0) 35%);
+}
+
+.vtm .hero__hook {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    border-left: 4px solid var(--lime);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.vtm .hero__hook b {
+    color: var(--lime);
+}
+
+.vtm .hero__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.vtm .hero__price {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.vtm .hero__price .accent {
+    font-size: 68px;
+}
+
+.vtm .hero__text {
+    max-width: 360px;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.vtm .bonus {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 22px 14px 14px;
+    margin-bottom: 20px;
+    border-radius: 22px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.vtm .bonus::before {
+    content: '';
+    position: absolute;
+    inset: -150%;
+    z-index: -2;
+    background: conic-gradient(from 0deg, transparent 0 60%, var(--orange) 75%, var(--lime) 90%, transparent 100%);
+    animation: vtm-spin 4s linear infinite;
+}
+
+.vtm .bonus::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(40, 30, 20, 0.95), rgba(15, 15, 15, 0.95));
+}
+
+.vtm .bonus__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--bg);
+    background: radial-gradient(circle at 30% 30%, #f4ff7a, var(--lime) 55%, #9fc000);
+    border-radius: 18px;
+    box-shadow: 0 0 24px rgba(243, 114, 45, 0.55);
+    animation: vtm-glow 2.4s ease-in-out infinite alternate;
+}
+
+.vtm .bonus__label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+}
+
+.vtm .bonus__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.vtm .bonus__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.vtm .bonus__tag {
+    padding: 2px 10px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 100px;
+}
+
+.vtm .include__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+}
+
+.vtm .include__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-content: start;
+}
+
+.vtm .include__list + .include__list {
+    grid-template-columns: 1fr;
+}
+
+.vtm .include__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+.vtm .include__item::before {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+.vtm .include__item--yes {
+    color: var(--bg);
+    background-color: var(--lime);
+}
+
+.vtm .include__item--yes::before {
+    content: '✓';
+    color: var(--lime);
+    background-color: var(--bg);
+}
+
+.vtm .include__item--no {
+    color: var(--grey);
+    background-color: var(--bg-card);
+    text-decoration: line-through;
+}
+
+.vtm .include__item--no::before {
+    content: '✕';
+    color: var(--grey);
+    border: 1px solid var(--grey);
+}
+
+.vtm .gallery-wrap {
+    overflow: hidden;
+}
+
+.vtm .gallery {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    
+    padding-right: 12px;
+    animation: vtm-gallery-move 40s linear infinite;
+}
+
+.vtm .gallery:hover {
+    animation-play-state: paused;
+}
+
+.vtm .gallery__img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.vtm .pay-chip {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 8px 8px 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+}
+
+.vtm .pay-chip b {
+    color: var(--lime);
+}
+
+.vtm .pay-chip__icon {
+    width: 26px;
+    height: 26px;
+}
+
+.vtm .pay-chip__bank {
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--white);
+    background-color: #3aa935;
+    border-radius: 100px;
+}
+
+.vtm .payment__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
+}
+
+.vtm .payment__card {
+    padding: 24px;
+    background-color: var(--bg-card);
+    border-radius: 24px;
+}
+
+.vtm .payment__card--accent {
+    position: relative;
+    color: var(--bg);
+    background-color: var(--lime);
+    overflow: hidden;
+}
+
+.vtm .payment__card--accent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40%;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    transform: skewX(-20deg);
+    animation: vtm-shine 4s ease-in-out infinite;
+}
+
+.vtm .payment__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.vtm .payment__text {
+    color: var(--grey);
+}
+
+.vtm .payment__head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.vtm .payment__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    padding: 6px;
+    background-color: var(--white);
+    border-radius: 16px;
+}
+
+.vtm .payment__bank {
+    font-weight: 700;
+}
+
+.vtm .payment__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.vtm .payment__list li {
+    padding: 6px 14px 6px 12px;
+    font-weight: 700;
+    background-color: rgba(11, 11, 11, 0.08);
+    border-radius: 100px;
+}
+
+.vtm .payment__list li::before {
+    content: '✓ ';
+}
+
+.vtm .facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.vtm .fact {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+}
+
+.vtm .fact__num {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.1;
+    color: var(--lime);
+    white-space: nowrap;
+}
+
+.vtm .fact__text {
+    font-size: 15px;
+    color: var(--grey);
+}
+
+.vtm .order__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.vtm .form,
+.vtm .form-success {
+    padding: 28px;
+    background-color: var(--bg-card);
+    border: 2px solid var(--lime);
+    border-radius: 24px;
+    box-shadow: 0 0 60px rgba(219, 250, 5, 0.12);
+}
+
+.vtm .form {
+    display: grid;
+    gap: 14px;
+}
+
+.vtm .form__field {
+    display: grid;
+    gap: 6px;
+}
+
+.vtm .form__label {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.vtm .form__input {
+    width: 100%;
+    padding: 16px 18px;
+    font: inherit;
+    font-size: 18px;
+    color: var(--white);
+    background-color: var(--bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.vtm .form__input:focus {
+    border-color: var(--lime);
+}
+
+.vtm .form__input.is-invalid {
+    border-color: var(--orange);
+    animation: vtm-shake 0.3s;
+}
+
+.vtm .form__error {
+    min-height: 1.5em;
+    font-size: 14px;
+    color: var(--orange);
+}
+
+.vtm .form__btn {
+    width: 100%;
+}
+
+.vtm .form__btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.vtm .form__policy {
+    font-size: 12px;
+    color: var(--grey);
+    text-align: center;
+}
+
+.vtm .form-success {
+    text-align: center;
+}
+
+.vtm .form-success__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--lime);
+    text-transform: uppercase;
+}
+
+.vtm .faq__item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vtm .faq__question {
+    position: relative;
+    padding: 16px 40px 16px 0;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.vtm .faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.vtm .faq__question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 28px;
+    color: var(--lime);
+    transition: transform 0.3s;
+}
+
+.vtm .faq__item[open] .faq__question::after {
+    transform: rotate(45deg);
+}
+
+.vtm .faq__answer {
+    padding-bottom: 16px;
+    color: var(--grey);
+}
+
+.vtm .footer {
+    padding: 28px 0 96px;
+    font-size: 14px;
+    color: var(--grey);
+    background-color: #000;
+}
+
+.vtm .footer__title {
+    font-weight: 700;
+    color: var(--white);
+}
+
+.vtm .sticky-cta {
+    display: none;
+}
+
+.vtm.js .appear {
+    opacity: 0;
+    animation: vtm-fade-up 0.7s ease-out forwards;
+}
+
+.vtm.js .appear:nth-child(2) { animation-delay: 0.1s; }
+
+.vtm.js .appear:nth-child(3) { animation-delay: 0.2s; }
+
+.vtm.js .appear:nth-child(4) { animation-delay: 0.35s; }
+
+.vtm.js .appear:nth-child(5) { animation-delay: 0.5s; }
+
+.vtm.js .appear:nth-child(6) { animation-delay: 0.6s; }
+
+.vtm.js .appear:nth-child(7) { animation-delay: 0.7s; }
+
+.vtm.js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.vtm.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.vtm .include__item.reveal:nth-child(2) { transition-delay: 0.08s; }
+
+.vtm .include__item.reveal:nth-child(3) { transition-delay: 0.16s; }
+
+.vtm .include__item.reveal:nth-child(4) { transition-delay: 0.24s; }
+
+.vtm .fact.reveal:nth-child(2) { transition-delay: 0.1s; }
+
+.vtm .fact.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+.vtm .fact.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+.vtm .payment__card.reveal:nth-child(2) { transition-delay: 0.1s; }
+
+@keyframes vtm-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes vtm-slow-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.12); }
+}
+
+@keyframes vtm-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes vtm-glow {
+    from { box-shadow: 0 0 14px rgba(243, 114, 45, 0.35); }
+    to { box-shadow: 0 0 32px rgba(243, 114, 45, 0.8); }
+}
+
+@keyframes vtm-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(219, 250, 5, 0.55); }
+    70% { box-shadow: 0 0 0 18px rgba(219, 250, 5, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(219, 250, 5, 0); }
+}
+
+@keyframes vtm-gallery-move {
+    to { transform: translateX(-50%); }
+}
+
+@keyframes vtm-shine {
+    0%, 60% { left: -40%; }
+    100% { left: 130%; }
+}
+
+@keyframes vtm-shake {
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.vtm *,
+.vtm *::before,
+.vtm *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+.vtm.js .appear,
+.vtm.js .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+.vtm .gallery-wrap {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 900px) {
+.vtm .include__grid,
+.vtm .order__inner {
+        grid-template-columns: 1fr;
+    }
+
+.vtm .order__inner {
+        gap: 8px;
+    }
+
+.vtm .facts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+.vtm section {
+        padding: 36px 0;
+    }
+
+.vtm .section-title {
+        font-size: 28px;
+    }
+
+.vtm .hero {
+        padding: 88px 0 36px;
+    }
+
+.vtm .hero::before {
+        background-position: center;
+    }
+
+.vtm .hero::after {
+        background: linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0.6) 45%, rgba(11, 11, 11, 0.85) 100%);
+    }
+
+.vtm .hero__hook {
+        font-size: 14px;
+    }
+
+.vtm .hero__title {
+        font-size: 38px;
+    }
+
+.vtm .hero__price {
+        font-size: 26px;
+    }
+
+.vtm .hero__price .accent {
+        font-size: 56px;
+    }
+
+.vtm .hero__price-unit {
+        display: block;
+    }
+
+.vtm .hero__text {
+        font-size: 16px;
+    }
+
+.vtm .bonus {
+        display: flex;
+    }
+
+.vtm .bonus__icon {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+
+.vtm .bonus__title {
+        font-size: 20px;
+    }
+
+.vtm .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+.vtm .include__list {
+        grid-template-columns: 1fr;
+    }
+
+.vtm .pay-chip {
+        font-size: 14px;
+    }
+
+.vtm .payment__grid {
+        grid-template-columns: 1fr;
+    }
+
+.vtm .payment__card {
+        padding: 20px;
+    }
+
+.vtm .payment__title {
+        font-size: 28px;
+    }
+
+.vtm .include__list + .include__list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+.vtm .include__item {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+
+.vtm .gallery__img {
+        width: 220px;
+        height: 150px;
+    }
+
+.vtm .fact {
+        padding: 16px;
+    }
+
+.vtm .fact__num {
+        font-size: 30px;
+    }
+
+.vtm .form,
+.vtm .form-success {
+        padding: 22px;
+    }
+
+.vtm .sticky-cta {
+        display: block;
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 20;
+        padding: 16px;
+        font-family: var(--font-title);
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        color: var(--bg);
+        background-color: var(--lime);
+        border-radius: 100px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+.vtm .sticky-cta.is-hidden {
+        opacity: 0;
+        transform: translateY(120%);
+        pointer-events: none;
+    }
+}
+
+.vtm h1,
+.vtm h2,
+.vtm h3,
+.vtm p,
+.vtm li,
+.vtm label,
+.vtm span,
+.vtm summary {
+    color: inherit;
+    letter-spacing: inherit;
+}
+</style>
+
+<div class="vtm" id="vtm">
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/logo-mark-white.png" alt="" class="logo__img">
+                <span class="logo__text">
+                    <span class="logo__name">VITAMIN</span>
+                    <span class="logo__sub">premium fitness club</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Хук -->
+        <section class="hero" id="vtm-hero">
+            <div class="container">
+                <p class="hero__hook appear">Думаєш, у Vitamin є тільки повна картка? <b>Уже ні.</b></p>
+                <h1 class="hero__title appear">
+                    Клубна картка —<br>
+                    тільки тренажерний зал
+                </h1>
+                <p class="hero__price appear">
+                    <span class="accent"><span data-count="310">310</span> грн</span>
+                    <span class="hero__price-unit">за відвідування</span>
+                </p>
+
+                <!-- Бонус: 3 сауни -->
+                <div class="bonus appear">
+                    <div class="bonus__icon">+3</div>
+                    <div class="bonus__body">
+                        <p class="bonus__label">Бонус до картки</p>
+                        <p class="bonus__title">3 сауни включено</p>
+                        <ul class="bonus__tags">
+                            <li class="bonus__tag">фінська</li>
+                            <li class="bonus__tag">римська</li>
+                            <li class="bonus__tag">інфрачервона</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Оплата частинами -->
+                <p class="pay-chip appear">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/privat-chastynamy.svg" alt="" class="pay-chip__icon">
+                    <span>Оплата <b>частинами</b> · 0%</span>
+                    <span class="pay-chip__bank">ПриватБанк</span>
+                </p>
+
+                <p class="hero__text appear">Більше не треба переплачувати за те, чим не користуєшся.</p>
+                <a href="#vtm-form" class="btn btn--pulse appear">Хочу картку</a>
+            </div>
+        </section>
+
+        <!-- 2. Що входить -->
+        <section class="include">
+            <div class="container">
+                <h2 class="section-title reveal">Платиш тільки за те, чим користуєшся</h2>
+                <div class="include__grid">
+                    <ul class="include__list">
+                        <li class="include__item include__item--yes reveal">Тренажерна зала 630 м²</li>
+                        <li class="include__item include__item--yes reveal">Кардіо-зона</li>
+                        <li class="include__item include__item--yes reveal">Інструктаж від тренера</li>
+                        <li class="include__item include__item--yes reveal">3 сауни — бонусом</li>
+                    </ul>
+                    <ul class="include__list">
+                        <li class="include__item include__item--no reveal">Басейн</li>
+                        <li class="include__item include__item--no reveal">Групові програми</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Зал -->
+        <section class="gym">
+            <div class="container">
+                <h2 class="section-title reveal">Найбільша тренажерна зала в Полтаві</h2>
+                <p class="section-text reveal">Топові тренажери <b>Nautilus, Star Trac, Life Fitness, Cybex</b></p>
+            </div>
+            <div class="gallery-wrap">
+                <div class="gallery">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/gym-hall.jpg" alt="Тренажерна зала Vitamin" class="gallery__img" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/gym-functional.jpg" alt="Зона функціональних тренувань" class="gallery__img" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/gym-strength.jpg" alt="Силові тренажери" class="gallery__img" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/sauna-finnish.jpg" alt="Фінська сауна" class="gallery__img" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/gym-cardio-2.jpg" alt="Кардіо-зона" class="gallery__img" loading="lazy">
+                    <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/gym-boxing.jpg" alt="Зона боксу з рингом" class="gallery__img" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Оплата -->
+        <section class="payment">
+            <div class="container">
+                <h2 class="section-title reveal">Зручна оплата</h2>
+                <div class="payment__grid">
+                    <div class="payment__card reveal">
+                        <p class="payment__title">Одразу</p>
+                        <p class="payment__text">одним платежем</p>
+                    </div>
+                    <div class="payment__card payment__card--accent reveal">
+                        <div class="payment__head">
+                            <img src="https://cdn.jsdelivr.net/gh/NatalyKapusta/fe-start-1305@35b08e8a69007ca5955c5106ceb768963fd73721/gym-landing/img/privat-chastynamy.svg" alt="" class="payment__icon">
+                            <div>
+                                <p class="payment__title">Частинами</p>
+                                <p class="payment__bank">«Оплата частинами» · ПриватБанк</p>
+                            </div>
+                        </div>
+                        <ul class="payment__list">
+                            <li>0% відсотків</li>
+                            <li>жодних переплат</li>
+                            <li>умови розповість менеджер</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Цифри -->
+        <section class="numbers">
+            <div class="container">
+                <div class="facts">
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="23">23</span></p>
+                        <p class="fact__text">роки на ринку</p>
+                    </div>
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="2500">2500</span> м²</p>
+                        <p class="fact__text">клуб у центрі</p>
+                    </div>
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="630">630</span> м²</p>
+                        <p class="fact__text">тренажерна зала</p>
+                    </div>
+                    <div class="fact reveal">
+                        <p class="fact__num"><span data-count="3">3</span></p>
+                        <p class="fact__text">сауни бонусом</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Форма -->
+        <section class="order" id="vtm-form">
+            <div class="container order__inner">
+                <div class="order__content reveal">
+                    <h2 class="section-title">Залиш заявку — розкажемо деталі</h2>
+                    <p class="section-text">Менеджер зателефонує, відповість на питання та допоможе оформити картку.</p>
+                </div>
+                <div class="reveal">
+                    <form class="form" id="vtm-lead-form" data-offer="Клубна картка — тільки тренажерний зал" novalidate>
+                        <label class="form__field">
+                            <span class="form__label">Ім'я *</span>
+                            <input type="text" name="name" class="form__input" placeholder="Ваше ім'я" autocomplete="given-name" required>
+                        </label>
+                        <label class="form__field">
+                            <span class="form__label">Телефон *</span>
+                            <input type="tel" name="phone" class="form__input" placeholder="+380 __ ___ __ __" autocomplete="tel" inputmode="tel" required>
+                        </label>
+                        <p class="form__error" id="vtm-form-error"></p>
+                        <button type="submit" class="btn form__btn">Відправити</button>
+                        <p class="form__policy">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
+                    </form>
+                    <div class="form-success" id="vtm-form-success" hidden>
+                        <p class="form-success__title">Дякуємо!</p>
+                        <p>Ми зателефонуємо найближчим часом.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Питання -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title reveal">Часті питання</h2>
+                <details class="faq__item reveal">
+                    <summary class="faq__question">Я новачок. Мені підійде?</summary>
+                    <p class="faq__answer">Так. У картку входить інструктаж у тренажерному та кардіозалах — покажемо тренажери та правильну техніку.</p>
+                </details>
+                <details class="faq__item reveal">
+                    <summary class="faq__question">Коли можна тренуватися?</summary>
+                    <p class="faq__answer">ПН–ПТ з 07:00 до 21:00, СБ–НД з 09:00 до 17:00.</p>
+                </details>
+                <details class="faq__item reveal">
+                    <summary class="faq__question">Коли працюють сауни?</summary>
+                    <p class="faq__answer">За розкладом: є жіночі та чоловічі години. Точний розклад розповість менеджер.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Підвал -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__title">Fitness Club Vitamin</p>
+            <p>м. Полтава, вул. Пилипа Орлика, 40 · ПН–ПТ 07:00–21:00, СБ–НД 09:00–17:00</p>
+        </div>
+    </footer>
+
+    <!-- Кнопка, що завжди видно на телефоні -->
+    <a href="#vtm-form" class="sticky-cta">Залишити заявку</a>
+</div>
+
+<script>
+var FORM_ENDPOINT = '';
+
+(function () {
+    var root = document.getElementById('vtm');
+    if (!root) {
+        return;
+    }
+    root.classList.add('js');
+
+    // Куди відправляти заявки (Formspree, Google Apps Script, CRM тощо).
+    // Поки порожньо — форма працює в демо-режимі і заявки нікуди не йдуть.
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Форма заявки ---------- */
+
+    const form = root.querySelector('#vtm-lead-form');
+    const nameInput = form.elements.name;
+    const phoneInput = form.elements.phone;
+    const errorBox = root.querySelector('#vtm-form-error');
+    const successBox = root.querySelector('#vtm-form-success');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    // UTM-мітки з реклами (Instagram / Facebook), щоб бачити, звідки заявка
+    const utm = {};
+    new URLSearchParams(location.search).forEach(function (value, key) {
+        if (key.startsWith('utm_') || key === 'fbclid') {
+            utm[key] = value;
+        }
+    });
+
+    // Формат телефону: +380 XX XXX XX XX
+    function formatPhone(value) {
+        let rest = value.replace(/\D/g, '');
+
+        // Відрізаємо код країни в будь-якому вигляді: 380..., 80..., 0...
+        if (rest.startsWith('380')) {
+            rest = rest.slice(3);
+        } else if (rest.startsWith('80')) {
+            rest = rest.slice(2);
+        }
+        // Код оператора не починається з 0, тож «050» → «50»
+        rest = rest.replace(/^0/, '');
+
+        const digits = ('380' + rest).slice(0, 12);
+
+        const parts = [
+            '+' + digits.slice(0, 3),
+            digits.slice(3, 5),
+            digits.slice(5, 8),
+            digits.slice(8, 10),
+            digits.slice(10, 12),
+        ];
+        return parts.filter(Boolean).join(' ');
+    }
+
+    // Під час введення лишаємо тільки цифри, пробіли та «+»,
+    // а у формат +380 XX XXX XX XX приводимо, коли людина виходить з поля
+    phoneInput.addEventListener('input', function () {
+        phoneInput.value = phoneInput.value.replace(/[^\d+\s()-]/g, '');
+    });
+
+    phoneInput.addEventListener('blur', function () {
+        if (phoneInput.value.trim()) {
+            phoneInput.value = formatPhone(phoneInput.value);
+        }
+    });
+
+    function showError(input, message) {
+        input.classList.add('is-invalid');
+        errorBox.textContent = message;
+        input.focus();
+    }
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        nameInput.classList.remove('is-invalid');
+        phoneInput.classList.remove('is-invalid');
+        errorBox.textContent = '';
+
+        const name = nameInput.value.trim();
+        if (phoneInput.value.trim()) {
+            phoneInput.value = formatPhone(phoneInput.value);
+        }
+        const phone = phoneInput.value.replace(/\D/g, '');
+
+        if (name.length < 2) {
+            showError(nameInput, "Вкажіть, будь ласка, ваше ім'я");
+            return;
+        }
+        if (phone.length !== 12) {
+            showError(phoneInput, 'Вкажіть номер телефону повністю');
+            return;
+        }
+
+        const data = {
+            name: name,
+            phone: '+' + phone,
+            offer: form.dataset.offer,
+            page: location.href,
+            ...utm,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Відправляємо...';
+
+        try {
+            if (FORM_ENDPOINT) {
+                const response = await fetch(FORM_ENDPOINT, {
+                    method: 'POST',
+                    // text/plain — щоб Google Apps Script прийняв запит без preflight
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(data),
+                });
+                if (!response.ok) {
+                    throw new Error('Помилка ' + response.status);
+                }
+            } else {
+                console.warn('FORM_ENDPOINT не налаштований. Заявка:', data);
+            }
+
+            // Подія для Meta Pixel — реклама навчається на заявках
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+
+            form.hidden = true;
+            successBox.hidden = false;
+        } catch (error) {
+            errorBox.textContent = 'Не вдалося відправити. Спробуйте ще раз за хвилину.';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Відправити';
+        }
+    });
+
+    /* ---------- Анімації ---------- */
+
+    // Цифри «набігають» від 0 до потрібного значення
+    function countUp(el) {
+        const target = Number(el.dataset.count);
+        const duration = 1400;
+        const start = performance.now();
+
+        function tick(now) {
+            const progress = Math.min(Math.max((now - start) / duration, 0), 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * eased).toLocaleString('uk-UA');
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            }
+        }
+        requestAnimationFrame(tick);
+    }
+
+    const counters = root.querySelectorAll('[data-count]');
+    const revealItems = root.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window && !reduceMotion) {
+        const counterObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    countUp(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.6 });
+        counters.forEach(function (el) {
+            counterObserver.observe(el);
+        });
+
+        // Блоки плавно зʼявляються при прокрутці
+        const revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealItems.forEach(function (el) {
+            revealObserver.observe(el);
+        });
+    } else {
+        revealItems.forEach(function (el) {
+            el.classList.add('is-visible');
+        });
+    }
+
+    // Стрічка фото їде по колу: дублюємо фото, щоб не було розриву
+    const gallery = root.querySelector('.gallery');
+
+    if (gallery && !reduceMotion) {
+        Array.from(gallery.children).forEach(function (img) {
+            const copy = img.cloneNode();
+            copy.alt = '';
+            copy.setAttribute('aria-hidden', 'true');
+            gallery.appendChild(copy);
+        });
+    }
+
+    /* ---------- Кнопка внизу екрана на телефоні ---------- */
+
+    // Ховаємо, поки на екрані перший блок або форма
+    const stickyCta = root.querySelector('.sticky-cta');
+    const visibleBlocks = new Set();
+
+    if ('IntersectionObserver' in window) {
+        const ctaObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    visibleBlocks.add(entry.target);
+                } else {
+                    visibleBlocks.delete(entry.target);
+                }
+            });
+            stickyCta.classList.toggle('is-hidden', visibleBlocks.size > 0);
+        });
+        ctaObserver.observe(root.querySelector('#vtm-hero'));
+        ctaObserver.observe(root.querySelector('#vtm-form'));
+    }
+})();
+</script>

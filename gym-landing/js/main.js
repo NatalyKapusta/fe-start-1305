@@ -100,7 +100,8 @@ form.addEventListener('submit', async function (event) {
         if (FORM_ENDPOINT) {
             const response = await fetch(FORM_ENDPOINT, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                // text/plain — щоб Google Apps Script прийняв запит без preflight
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(data),
             });
             if (!response.ok) {
