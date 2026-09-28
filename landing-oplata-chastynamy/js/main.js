@@ -1,5 +1,5 @@
 // Куди відправляти заявки:
-// — форма з data-netlify на Netlify → заявки приймає сам Netlify (нічого вказувати не треба);
+// — форма з data-send="netlify" на Netlify → заявки приймає сам Netlify (нічого вказувати не треба);
 // — інакше адреса Google Apps Script / CRM у FORM_ENDPOINT;
 // — файл, відкритий з компʼютера (file://), працює в демо-режимі.
 const FORM_ENDPOINT = '';
@@ -115,7 +115,8 @@ form.addEventListener('submit', async function (event) {
             if (!response.ok) {
                 throw new Error('Помилка ' + response.status);
             }
-        } else if (form.hasAttribute('data-netlify')) {
+        } else if (form.dataset.send === 'netlify') {
+            // data-netlify Netlify прибирає зі сторінки, тому перевіряємо власну мітку
             // Netlify Forms: заповнюємо службові поля і шлемо форму як звичайну
             Object.keys(data).forEach(function (key) {
                 if (form.elements[key] && form.elements[key].type === 'hidden') {

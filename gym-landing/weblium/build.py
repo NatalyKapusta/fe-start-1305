@@ -127,7 +127,7 @@ for id_ in IDS:
     body = body.replace(f'id="{id_}"', f'id="vtm-{id_}"')
 body = body.replace('href="#form"', 'href="#vtm-form"')
 # Атрибути Netlify Forms у Weblium не потрібні: там заявки йдуть на FORM_ENDPOINT
-body = body.replace(' data-netlify="true" netlify-honeypot="bot-field"', '')
+body = body.replace(' data-netlify="true" netlify-honeypot="bot-field" data-send="netlify"', '')
 
 fonts = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
