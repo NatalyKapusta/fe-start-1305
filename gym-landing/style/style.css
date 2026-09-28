@@ -363,56 +363,122 @@ section {
     border-radius: 16px;
 }
 
-/* 4. Цифри */
-.compare {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+/* Плашка «Оплата частинами» на першому екрані */
+.pay-chip {
+    display: flex;
+    width: fit-content;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 10px;
+    padding: 8px 8px 8px 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
 }
 
-.compare__card {
-    height: 100%;
+.pay-chip b {
+    color: var(--lime);
+}
+
+.pay-chip__icon {
+    width: 26px;
+    height: 26px;
+}
+
+.pay-chip__bank {
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--white);
+    background-color: #3aa935;
+    border-radius: 100px;
+}
+
+/* 4. Зручна оплата */
+.payment__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
+}
+
+.payment__card {
     padding: 24px;
     background-color: var(--bg-card);
     border-radius: 24px;
 }
 
-.compare__card--accent {
+.payment__card--accent {
+    position: relative;
     color: var(--bg);
     background-color: var(--lime);
+    overflow: hidden;
 }
 
-.compare__vs {
+/* Легкий відблиск, що пробігає по картці */
+.payment__card--accent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40%;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    transform: skewX(-20deg);
+    animation: shine 4s ease-in-out infinite;
+}
+
+.payment__title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.payment__text {
+    color: var(--grey);
+}
+
+.payment__head {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    font-family: var(--font-title);
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+    gap: 14px;
+    margin-bottom: 14px;
 }
 
-.compare__label {
-    font-size: 15px;
-    margin-bottom: 4px;
+.payment__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    padding: 6px;
+    background-color: var(--white);
+    border-radius: 16px;
 }
 
-.compare__price {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.1;
-}
-
-.compare__text {
+.payment__bank {
     font-weight: 700;
 }
 
+.payment__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.payment__list li {
+    padding: 6px 14px 6px 12px;
+    font-weight: 700;
+    background-color: rgba(11, 11, 11, 0.08);
+    border-radius: 100px;
+}
+
+.payment__list li::before {
+    content: '✓ ';
+}
+
+/* 5. Цифри */
 .facts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -439,26 +505,7 @@ section {
     color: var(--grey);
 }
 
-/* Хвиляста стрічка */
-.ribbon {
-    overflow: hidden;
-}
-
-.ribbon__svg {
-    display: block;
-    width: 100%;
-    height: 140px;
-}
-
-.ribbon__text {
-    font-family: var(--font-text);
-    font-weight: 800;
-    font-size: 30px;
-    fill: var(--bg);
-    dominant-baseline: middle;
-}
-
-/* 5. Форма */
+/* 6. Форма */
 .order__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -512,6 +559,64 @@ section {
     animation: shake 0.3s;
 }
 
+.form__check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form__check:has(.form__checkbox:checked) {
+    border-color: var(--lime);
+    background-color: rgba(219, 250, 5, 0.08);
+}
+
+/* Справжній чекбокс ховаємо, малюємо свій */
+.form__checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form__check-box {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--grey);
+    border-radius: 6px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.form__checkbox:checked + .form__check-box {
+    border-color: var(--lime);
+    background-color: var(--lime);
+}
+
+.form__checkbox:checked + .form__check-box::after {
+    content: '✓';
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--bg);
+}
+
+.form__checkbox:focus-visible + .form__check-box {
+    outline: 2px solid var(--lime);
+    outline-offset: 2px;
+}
+
+.form__check-icon {
+    width: 22px;
+    height: 22px;
+}
+
 .form__error {
     min-height: 1.5em;
     font-size: 14px;
@@ -545,7 +650,7 @@ section {
     text-transform: uppercase;
 }
 
-/* 6. Питання */
+/* 7. Питання */
 .faq__item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -613,6 +718,7 @@ section {
 .js .appear:nth-child(4) { animation-delay: 0.35s; }
 .js .appear:nth-child(5) { animation-delay: 0.5s; }
 .js .appear:nth-child(6) { animation-delay: 0.6s; }
+.js .appear:nth-child(7) { animation-delay: 0.7s; }
 
 /* Решта блоків — при прокрутці */
 .js .reveal {
@@ -632,6 +738,7 @@ section {
 .fact.reveal:nth-child(2) { transition-delay: 0.1s; }
 .fact.reveal:nth-child(3) { transition-delay: 0.2s; }
 .fact.reveal:nth-child(4) { transition-delay: 0.3s; }
+.payment__card.reveal:nth-child(2) { transition-delay: 0.1s; }
 
 @keyframes fade-up {
     from {
@@ -666,6 +773,11 @@ section {
 
 @keyframes gallery-move {
     to { transform: translateX(-50%); }
+}
+
+@keyframes shine {
+    0%, 60% { left: -40%; }
+    100% { left: 130%; }
 }
 
 @keyframes shake {
@@ -778,6 +890,22 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .pay-chip {
+        font-size: 14px;
+    }
+
+    .payment__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment__card {
+        padding: 20px;
+    }
+
+    .payment__title {
+        font-size: 28px;
+    }
+
     .include__list + .include__list {
         grid-template-columns: 1fr 1fr;
     }
@@ -792,31 +920,12 @@ section {
         height: 150px;
     }
 
-    .compare {
-        grid-template-columns: 1fr;
-    }
-
-    .compare__vs {
-        margin: -26px auto;
-        position: relative;
-        z-index: 1;
-        background-color: var(--bg);
-    }
-
-    .compare__price {
-        font-size: 40px;
-    }
-
     .fact {
         padding: 16px;
     }
 
     .fact__num {
         font-size: 30px;
-    }
-
-    .ribbon__svg {
-        height: 100px;
     }
 
     .form,

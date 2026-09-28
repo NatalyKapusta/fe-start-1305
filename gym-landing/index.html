@@ -64,6 +64,13 @@
                     </div>
                 </div>
 
+                <!-- Оплата частинами -->
+                <p class="pay-chip appear">
+                    <img src="img/privat-chastynamy.svg" alt="" class="pay-chip__icon">
+                    <span>Оплата <b>частинами</b> · 0%</span>
+                    <span class="pay-chip__bank">ПриватБанк</span>
+                </p>
+
                 <p class="hero__text appear">Більше не треба переплачувати за те, чим не користуєшся.</p>
                 <a href="#form" class="btn btn--pulse appear">Хочу картку</a>
             </div>
@@ -106,22 +113,36 @@
             </div>
         </section>
 
-        <!-- 4. Цифри -->
-        <section class="numbers">
+        <!-- 4. Оплата -->
+        <section class="payment">
             <div class="container">
-                <div class="compare reveal">
-                    <div class="compare__card">
-                        <p class="compare__label">Групове заняття в студії поруч</p>
-                        <p class="compare__price"><span data-count="300">300</span>–<span data-count="400">400</span> грн</p>
-                        <p class="compare__text">одне заняття за розкладом</p>
+                <h2 class="section-title reveal">Зручна оплата</h2>
+                <div class="payment__grid">
+                    <div class="payment__card reveal">
+                        <p class="payment__title">Одразу</p>
+                        <p class="payment__text">одним платежем</p>
                     </div>
-                    <div class="compare__vs">vs</div>
-                    <div class="compare__card compare__card--accent">
-                        <p class="compare__label">Відвідування у Vitamin</p>
-                        <p class="compare__price"><span data-count="310">310</span> грн</p>
-                        <p class="compare__text">весь зал + 3 сауни, скільки завгодно часу</p>
+                    <div class="payment__card payment__card--accent reveal">
+                        <div class="payment__head">
+                            <img src="img/privat-chastynamy.svg" alt="" class="payment__icon">
+                            <div>
+                                <p class="payment__title">Частинами</p>
+                                <p class="payment__bank">«Оплата частинами» · ПриватБанк</p>
+                            </div>
+                        </div>
+                        <ul class="payment__list">
+                            <li>0% відсотків</li>
+                            <li>жодних переплат</li>
+                            <li>умови розповість менеджер</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- 5. Цифри -->
+        <section class="numbers">
+            <div class="container">
                 <div class="facts">
                     <div class="fact reveal">
                         <p class="fact__num"><span data-count="23">23</span></p>
@@ -143,15 +164,7 @@
             </div>
         </section>
 
-        <!-- Хвиляста стрічка, текст біжить -->
-        <div class="ribbon" aria-hidden="true">
-            <svg class="ribbon__svg" viewBox="0 0 1200 160" preserveAspectRatio="none">
-                <path id="wave" d="M-20,90 C150,10 300,10 450,80 S750,150 900,80 S1100,10 1220,70" fill="none" stroke="#dbfa05" stroke-width="56" stroke-linecap="round"/>
-                <text class="ribbon__text"><textPath href="#wave" id="ribbon-text">Купуй картку та розпочинай тренування! • Купуй картку та розпочинай тренування! • Купуй картку та розпочинай тренування! • Купуй картку та розпочинай тренування! • </textPath></text>
-            </svg>
-        </div>
-
-        <!-- 5. Форма -->
+        <!-- 6. Форма -->
         <section class="order" id="form">
             <div class="container order__inner">
                 <div class="order__content reveal">
@@ -168,6 +181,12 @@
                             <span class="form__label">Телефон *</span>
                             <input type="tel" name="phone" class="form__input" placeholder="+380 __ ___ __ __" autocomplete="tel" inputmode="tel" required>
                         </label>
+                        <label class="form__check">
+                            <input type="checkbox" name="installments" class="form__checkbox">
+                            <span class="form__check-box"></span>
+                            <img src="img/privat-chastynamy.svg" alt="" class="form__check-icon">
+                            <span>Цікавить оплата частинами</span>
+                        </label>
                         <p class="form__error" id="form-error"></p>
                         <button type="submit" class="btn form__btn">Відправити</button>
                         <p class="form__policy">Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.</p>
@@ -180,7 +199,7 @@
             </div>
         </section>
 
-        <!-- 6. Питання -->
+        <!-- 7. Питання -->
         <section class="faq">
             <div class="container">
                 <h2 class="section-title reveal">Часті питання</h2>

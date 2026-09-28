@@ -93,6 +93,11 @@ form.addEventListener('submit', async function (event) {
         ...utm,
     };
 
+    // Галочка «Цікавить оплата частинами» (є не на всіх лендингах)
+    if (form.elements.installments) {
+        data.installments = form.elements.installments.checked ? 'так' : 'ні';
+    }
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Відправляємо...';
 
@@ -187,28 +192,6 @@ if (gallery && !reduceMotion) {
         copy.setAttribute('aria-hidden', 'true');
         gallery.appendChild(copy);
     });
-}
-
-// Текст на хвилястій стрічці біжить
-const ribbonText = document.getElementById('ribbon-text');
-
-if (ribbonText && !reduceMotion) {
-    let offset = 0;
-    let phraseLength = 0;
-
-    function moveRibbon() {
-        if (!phraseLength) {
-            const repeats = ribbonText.textContent.split('•').length - 1;
-            phraseLength = ribbonText.getComputedTextLength() / repeats;
-        }
-        offset -= 0.6;
-        if (offset <= -phraseLength) {
-            offset += phraseLength;
-        }
-        ribbonText.setAttribute('startOffset', offset);
-        requestAnimationFrame(moveRibbon);
-    }
-    requestAnimationFrame(moveRibbon);
 }
 
 /* ---------- Кнопка внизу екрана на телефоні ---------- */
