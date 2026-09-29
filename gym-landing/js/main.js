@@ -60,6 +60,22 @@ phoneInput.addEventListener('blur', function () {
     }
 });
 
+// Захист від дублів: поки заявка відправляється, повторне натискання ігнорується,
+// а подія Lead відправляється в Meta Pixel тільки один раз
+let isSending = false;
+let leadTracked = false;
+
+// Подія Lead — тільки після того, як сервер підтвердив, що заявку прийнято
+function trackLead() {
+    if (leadTracked) {
+        return;
+    }
+    leadTracked = true;
+    if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+    }
+}
+
 function showError(input, message) {
     input.classList.add('is-invalid');
     errorBox.textContent = message;
@@ -68,6 +84,9 @@ function showError(input, message) {
 
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
+    if (isSending || leadTracked) {
+        return;
+    }
     nameInput.classList.remove('is-invalid');
     phoneInput.classList.remove('is-invalid');
     errorBox.textContent = '';
@@ -95,6 +114,7 @@ form.addEventListener('submit', async function (event) {
         ...utm,
     };
 
+    isSending = true;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Відправляємо...';
 
@@ -103,6 +123,9 @@ form.addEventListener('submit', async function (event) {
     const isBot = trap && trap.value;
 
     try {
+        // true — сервер підтвердив, що заявку збережено
+        let confirmed = false;
+
         if (isBot || location.protocol === 'file:') {
             console.warn('Демо-режим: заявка не відправляється.', data);
         } else if (FORM_ENDPOINT) {
@@ -115,9 +138,10 @@ form.addEventListener('submit', async function (event) {
             if (!response.ok) {
                 throw new Error('Помилка ' + response.status);
             }
+            confirmed = true;
         } else if (form.dataset.send === 'netlify') {
-            // data-netlify Netlify прибирає зі сторінки, тому перевіряємо власну мітку
-            // Netlify Forms: заповнюємо службові поля і шлемо форму як звичайну
+            // data-netlify Netlify прибирає зі сторінки, тому перевіряємо власну мітку.
+            // Заповнюємо службові поля і шлемо форму як звичайну
             Object.keys(data).forEach(function (key) {
                 if (form.elements[key] && form.elements[key].type === 'hidden') {
                     form.elements[key].value = data[key];
@@ -132,13 +156,14 @@ form.addEventListener('submit', async function (event) {
             if (!response.ok) {
                 throw new Error('Помилка ' + response.status);
             }
+            confirmed = true;
         } else {
             console.warn('FORM_ENDPOINT не налаштований. Заявка:', data);
         }
 
-        // Подія для Meta Pixel — реклама навчається на заявках
-        if (typeof fbq === 'function') {
-            fbq('track', 'Lead');
+        // Meta Pixel: Lead — лише коли заявку справді прийнято сервером
+        if (confirmed) {
+            trackLead();
         }
 
         form.hidden = true;
@@ -147,6 +172,8 @@ form.addEventListener('submit', async function (event) {
         errorBox.textContent = 'Не вдалося відправити. Спробуйте ще раз за хвилину.';
         submitBtn.disabled = false;
         submitBtn.textContent = 'Відправити';
+    } finally {
+        isSending = false;
     }
 });
 
