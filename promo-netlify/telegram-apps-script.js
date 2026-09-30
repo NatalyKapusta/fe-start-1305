@@ -36,6 +36,22 @@ function doPost(e) {
 
     // Netlify кладе поля форми в body.data
     var data = body.data || {};
+
+    // Netlify не розуміє переадресацію, яку повертає Google, і повторює той самий запит.
+    // Запамʼятовуємо id заявки на 6 годин і повтори ігноруємо: одна заявка — одне повідомлення.
+    var id = body.id || [data.name, data.phone, body.created_at].join('|');
+    var lock = LockService.getScriptLock();
+    lock.waitLock(10000);
+    try {
+        var cache = CacheService.getScriptCache();
+        if (cache.get('lead:' + id)) {
+            return reply({ ok: true, duplicate: true });
+        }
+        cache.put('lead:' + id, '1', 21600);
+    } finally {
+        lock.releaseLock();
+    }
+
     sendToTelegram(formatMessage(data, body));
     return reply({ ok: true });
 }
