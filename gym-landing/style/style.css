@@ -450,7 +450,18 @@ section {
     color: var(--white);
 }
 
+.compare__save small {
+    display: block;
+    font-family: var(--font-text);
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: none;
+    text-align: center;
+}
+
 .compare__save {
+    text-align: center;
+    border-radius: 20px;
     padding: 10px 20px;
     font-family: var(--font-title);
     font-weight: 700;
@@ -458,7 +469,6 @@ section {
     text-transform: uppercase;
     color: var(--bg);
     background-color: var(--lime);
-    border-radius: 100px;
     white-space: nowrap;
 }
 
