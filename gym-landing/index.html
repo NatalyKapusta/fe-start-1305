@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Клубна картка — тільки тренажерний зал | Vitamin Полтава</title>
-    <meta name="description" content="Окрема клубна картка у Vitamin: тільки тренажерний зал + бонусом фінська, римська та інфрачервона сауни. 310 грн за відвідування.">
+    <meta name="description" content="Клубна картка «Тренажерний зал + сауни» у Vitamin: 4 900 грн/місяць, 16 тренувань, ≈306 грн за тренування. Частинами 8 × 612,50 грн. Гостьовий візит за 350 грн.">
 
     <!-- Превʼю при репості посилання в Instagram / Facebook -->
     <meta property="og:title" content="Клубна картка — тільки тренажерний зал 💪">
-    <meta property="og:description" content="310 грн за відвідування. 3 сауни включено. Можна частинами — 0%, ПриватБанк.">
+    <meta property="og:description" content="4 900 грн/місяць · 16 тренувань · 3 сауни включено. Частинами 8 × 612,50 грн. Гостьовий за 350 грн.">
     <meta property="og:image" content="https://promo.vitamincentr.pl.ua/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -17,6 +17,64 @@
     <meta property="og:locale" content="uk_UA">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="canonical" href="https://promo.vitamincentr.pl.ua/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b0b0b">
+    <!-- Головне фото першого екрана вантажимо першим — сторінка зʼявляється швидше -->
+    <link rel="preload" as="image" href="img/gym-functional.webp" type="image/webp" fetchpriority="high">
+    <!-- Дані для Google: що це за місце, адреса, години, ціни -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "Fitness Club Vitamin",
+    "url": "https://promo.vitamincentr.pl.ua/",
+    "image": "https://promo.vitamincentr.pl.ua/img/og-image.jpg",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "вул. Пилипа Орлика, 40",
+        "addressLocality": "Полтава",
+        "addressCountry": "UA"
+    },
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "07:00",
+            "closes": "21:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+        }
+    ],
+    "makesOffer": [
+        {
+            "@type": "Offer",
+            "name": "Клубна картка «Тренажерний зал + сауни», 1 місяць, 16 тренувань",
+            "price": "4900",
+            "priceCurrency": "UAH"
+        },
+        {
+            "@type": "Offer",
+            "name": "Гостьовий візит «Тренажерний зал + сауни»",
+            "price": "350",
+            "priceCurrency": "UAH"
+        }
+    ]
+}
+    </script>
     <link rel="icon" href="img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +109,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="img/logo-mark-white.png" alt="" class="logo__img">
+                <img src="img/logo-mark-white.png" alt="" class="logo__img" width="36" height="40">
                 <span class="logo__text">
                     <span class="logo__name">VITAMIN</span>
                     <span class="logo__sub">premium fitness club</span>
@@ -69,10 +127,13 @@
                     Клубна картка —<br>
                     тільки тренажерний зал
                 </h1>
-                <p class="hero__price appear">
-                    <span class="accent"><span data-count="310">310</span> грн</span>
-                    <span class="hero__price-unit">за відвідування</span>
-                </p>
+                <div class="hero__offer appear">
+                    <p class="hero__price">
+                        <span class="accent"><span data-count="4900">4 900</span> грн</span>
+                        <span class="hero__price-unit">/ місяць</span>
+                    </p>
+                    <p class="hero__terms">16 тренувань · повний день · ≈ <b>306 грн</b> за тренування</p>
+                </div>
 
                 <!-- Бонус: 3 сауни -->
                 <div class="bonus appear">
@@ -90,36 +151,86 @@
 
                 <!-- Оплата частинами -->
                 <p class="pay-chip appear">
-                    <img src="img/privat-chastynamy.svg" alt="" class="pay-chip__icon">
-                    <span>Оплата <b>частинами</b> · 0%</span>
+                    <img src="img/privat-chastynamy.svg" alt="" class="pay-chip__icon" width="26" height="26">
+                    <span>Частинами: <b>8 × 612,50 грн</b> · 0%</span>
                     <span class="pay-chip__bank">ПриватБанк</span>
                 </p>
 
                 <p class="hero__text appear">Більше не треба переплачувати за те, чим не користуєшся.</p>
-                <a href="#form" class="btn btn--pulse appear">Хочу картку</a>
-            </div>
-        </section>
-
-        <!-- 2. Що входить -->
-        <section class="include">
-            <div class="container">
-                <h2 class="section-title reveal">Платиш тільки за те, чим користуєшся</h2>
-                <div class="include__grid">
-                    <ul class="include__list">
-                        <li class="include__item include__item--yes reveal">Тренажерна зала 630 м²</li>
-                        <li class="include__item include__item--yes reveal">Кардіо-зона</li>
-                        <li class="include__item include__item--yes reveal">Інструктаж від тренера</li>
-                        <li class="include__item include__item--yes reveal">3 сауни — бонусом</li>
-                    </ul>
-                    <ul class="include__list">
-                        <li class="include__item include__item--no reveal">Басейн</li>
-                        <li class="include__item include__item--no reveal">Групові програми</li>
-                    </ul>
+                <div class="hero__actions appear">
+                    <a href="#form" class="btn btn--pulse" data-choice="card">Хочу картку</a>
+                    <a href="#guest" class="btn btn--ghost">Гостьовий за 350 грн</a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Зал -->
+        <!-- 2. Порівняння з повною карткою -->
+        <section class="compare">
+            <div class="container">
+                <h2 class="section-title reveal">Платиш тільки за те, чим користуєшся</h2>
+                <div class="compare__table reveal">
+                    <div class="compare__row compare__row--head">
+                        <span></span>
+                        <span class="compare__col compare__col--ours">Тільки зал + сауни</span>
+                        <span class="compare__col">Повна картка</span>
+                    </div>
+                    <div class="compare__row compare__row--price">
+                        <span>Ціна за місяць</span>
+                        <span class="compare__col compare__col--ours"><b>4 900 грн</b><small>16 тренувань</small></span>
+                        <span class="compare__col"><b>5 600 грн</b><small>безліміт</small></span>
+                    </div>
+                    <div class="compare__row">
+                        <span>Тренажерний зал, кардіо, інструктаж</span>
+                        <span class="compare__col compare__col--ours compare__yes">✓</span>
+                        <span class="compare__col compare__yes">✓</span>
+                    </div>
+                    <div class="compare__row">
+                        <span>3 сауни: фінська, римська, інфрачервона</span>
+                        <span class="compare__col compare__col--ours compare__yes">✓</span>
+                        <span class="compare__col compare__yes">✓</span>
+                    </div>
+                    <div class="compare__row">
+                        <span>Басейн</span>
+                        <span class="compare__col compare__col--ours compare__no">—</span>
+                        <span class="compare__col compare__yes">✓</span>
+                    </div>
+                    <div class="compare__row">
+                        <span>Групові програми, єдиноборства</span>
+                        <span class="compare__col compare__col--ours compare__no">—</span>
+                        <span class="compare__col compare__yes">✓</span>
+                    </div>
+                </div>
+                <div class="compare__summary reveal">
+                    <p><b>16 тренувань на місяць — це 4 рази на тиждень.</b> Більше, ніж достатньо для результату. Не ходиш у басейн і на групові — навіщо за них платити?</p>
+                    <p class="compare__save">Економія <span data-count="700">700</span> грн щомісяця</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Гостьовий візит — перший крок -->
+        <section class="guest" id="guest">
+            <div class="container">
+                <div class="guest__card reveal">
+                    <div class="guest__info">
+                        <p class="guest__label">Перший крок</p>
+                        <h2 class="guest__title">Не впевнений? Почни з гостьового візиту</h2>
+                        <ul class="guest__list">
+                            <li>Весь день, у будь-який час роботи клубу</li>
+                            <li>Тренажерний зал + 3 сауни</li>
+                            <li>Купиш клубну картку протягом 14 днів після гостьового — <b>повернемо гроші за гостьовий</b></li>
+                        </ul>
+                    </div>
+                    <div class="guest__price">
+                        <span class="guest__badge">−50%</span>
+                        <s class="guest__old">700 грн</s>
+                        <p class="guest__new"><span data-count="350">350</span> грн</p>
+                        <a href="#form" class="btn" data-choice="guest">Хочу на гостьовий</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Зал -->
         <section class="gym">
             <div class="container">
                 <h2 class="section-title reveal">Найбільша тренажерна зала в Полтаві</h2>
@@ -127,44 +238,46 @@
             </div>
             <div class="gallery-wrap">
                 <div class="gallery">
-                    <img src="img/gym-hall.jpg" alt="Тренажерна зала Vitamin" class="gallery__img" loading="lazy">
-                    <img src="img/gym-functional.jpg" alt="Зона функціональних тренувань" class="gallery__img" loading="lazy">
-                    <img src="img/gym-strength.jpg" alt="Силові тренажери" class="gallery__img" loading="lazy">
-                    <img src="img/sauna-finnish.jpg" alt="Фінська сауна" class="gallery__img" loading="lazy">
-                    <img src="img/gym-cardio-2.jpg" alt="Кардіо-зона" class="gallery__img" loading="lazy">
-                    <img src="img/gym-boxing.jpg" alt="Зона боксу з рингом" class="gallery__img" loading="lazy">
+                    <img src="img/gym-hall.webp" width="640" height="425" alt="Тренажерна зала Vitamin" class="gallery__img" loading="lazy">
+                    <img src="img/gym-functional.webp" width="1080" height="810" alt="Зона функціональних тренувань" class="gallery__img" loading="lazy">
+                    <img src="img/gym-strength.webp" width="640" height="425" alt="Силові тренажери" class="gallery__img" loading="lazy">
+                    <img src="img/sauna-finnish.webp" width="640" height="426" alt="Фінська сауна" class="gallery__img" loading="lazy">
+                    <img src="img/gym-cardio-2.webp" width="640" height="427" alt="Кардіо-зона" class="gallery__img" loading="lazy">
+                    <img src="img/gym-boxing.webp" width="640" height="360" alt="Зона боксу з рингом" class="gallery__img" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- 4. Оплата -->
+        <!-- 5. Оплата -->
         <section class="payment">
             <div class="container">
                 <h2 class="section-title reveal">Зручна оплата</h2>
                 <div class="payment__grid">
                     <div class="payment__card reveal">
                         <p class="payment__title">Одразу</p>
+                        <p class="payment__sum">4 900 грн</p>
                         <p class="payment__text">одним платежем</p>
                     </div>
                     <div class="payment__card payment__card--accent reveal">
                         <div class="payment__head">
-                            <img src="img/privat-chastynamy.svg" alt="" class="payment__icon">
+                            <img src="img/privat-chastynamy.svg" alt="" class="payment__icon" width="56" height="56" loading="lazy">
                             <div>
                                 <p class="payment__title">Частинами</p>
                                 <p class="payment__bank">«Оплата частинами» · ПриватБанк</p>
                             </div>
                         </div>
+                        <p class="payment__sum">8 × 612,50 грн</p>
                         <ul class="payment__list">
+                            <li>8 рівних платежів</li>
                             <li>0% відсотків</li>
                             <li>жодних переплат</li>
-                            <li>умови розповість менеджер</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. Цифри -->
+        <!-- 6. Цифри -->
         <section class="numbers">
             <div class="container">
                 <div class="facts">
@@ -188,12 +301,12 @@
             </div>
         </section>
 
-        <!-- 6. Форма -->
+        <!-- 7. Форма -->
         <section class="order" id="form">
             <div class="container order__inner">
                 <div class="order__content reveal">
                     <h2 class="section-title">Залиш заявку — розкажемо деталі</h2>
-                    <p class="section-text">Менеджер зателефонує, відповість на питання та допоможе оформити картку.</p>
+                    <p class="section-text">Менеджер зателефонує, відповість на питання та допоможе оформити картку або записатися на гостьовий візит.</p>
                 </div>
                 <div class="reveal">
                     <form class="form" id="lead-form" name="tilky-zal" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-send="netlify" data-offer="Клубна картка — тільки тренажерний зал" novalidate>
@@ -208,6 +321,17 @@
                         <input type="hidden" name="utm_term">
                         <input type="hidden" name="fbclid">
                         <p class="form__trap" hidden><label>Не заповнюйте: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                        <fieldset class="form__choice">
+                            <legend class="form__label">Що вас цікавить?</legend>
+                            <label class="form__option">
+                                <input type="radio" name="interest" value="Клубна картка" data-offer="Клубна картка «Тренажерний зал + сауни» — 4 900 грн" checked>
+                                <span>Клубна картка<small>4 900 грн / місяць</small></span>
+                            </label>
+                            <label class="form__option">
+                                <input type="radio" name="interest" value="Гостьовий візит" data-offer="Гостьовий візит — 350 грн">
+                                <span>Гостьовий візит<small>350 грн замість 700</small></span>
+                            </label>
+                        </fieldset>
                         <label class="form__field">
                             <span class="form__label">Ім'я *</span>
                             <input type="text" name="name" class="form__input" placeholder="Ваше ім'я" autocomplete="given-name" required>
@@ -228,7 +352,7 @@
             </div>
         </section>
 
-        <!-- 7. Питання -->
+        <!-- 8. Питання -->
         <section class="faq">
             <div class="container">
                 <h2 class="section-title reveal">Часті питання</h2>

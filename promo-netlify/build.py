@@ -38,4 +38,9 @@ with zipfile.ZipFile(OUT_ZIP, 'w', zipfile.ZIP_DEFLATED) as z:
                 full = os.path.join(root, name)
                 z.write(full, os.path.join('promo-vitamin', url_path, os.path.relpath(full, src)))
 
+    # Кешування: картинки браузер тримає тиждень — повторні відкриття миттєві
+    z.writestr('promo-vitamin/_headers', '''/img/*
+  Cache-Control: public, max-age=604800
+''')
+
 print('OK:', OUT_ZIP, os.path.getsize(OUT_ZIP) // 1024, 'KB')

@@ -76,6 +76,23 @@ function trackLead() {
     }
 }
 
+// Що обрала людина: картка чи гостьовий. Потрапляє в заголовок заявки
+function chosenOffer() {
+    const choice = form.querySelector('input[name="interest"]:checked');
+    return choice ? choice.dataset.offer : form.dataset.offer;
+}
+
+// Кнопки «Хочу картку» / «Хочу на гостьовий» одразу відмічають потрібний варіант у формі
+document.querySelectorAll('[data-choice]').forEach(function (link) {
+    link.addEventListener('click', function () {
+        const value = link.dataset.choice === 'guest' ? 'Гостьовий візит' : 'Клубна картка';
+        const radio = form.querySelector('input[name="interest"][value="' + value + '"]');
+        if (radio) {
+            radio.checked = true;
+        }
+    });
+});
+
 function showError(input, message) {
     input.classList.add('is-invalid');
     errorBox.textContent = message;
@@ -109,7 +126,7 @@ form.addEventListener('submit', async function (event) {
     const data = {
         name: name,
         phone: '+' + phone,
-        offer: form.dataset.offer,
+        offer: chosenOffer(),
         page: location.href,
         ...utm,
     };
