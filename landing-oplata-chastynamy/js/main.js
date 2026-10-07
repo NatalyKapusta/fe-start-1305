@@ -85,7 +85,7 @@ function chosenOffer() {
 // Кнопки «Хочу картку» / «Хочу на гостьовий» одразу відмічають потрібний варіант у формі
 document.querySelectorAll('[data-choice]').forEach(function (link) {
     link.addEventListener('click', function () {
-        const value = link.dataset.choice === 'guest' ? 'Гостьовий візит' : 'Клубна картка';
+        const value = link.dataset.choice === 'guest' ? 'Пробний день' : 'Клубна картка';
         const radio = form.querySelector('input[name="interest"][value="' + value + '"]');
         if (radio) {
             radio.checked = true;

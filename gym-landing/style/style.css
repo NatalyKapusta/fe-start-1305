@@ -221,6 +221,33 @@ section {
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
 }
 
+/* Кнопка «Пробний день»: ціна з перекресленою старою + підпис що входить */
+.btn--trial {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1.15;
+}
+
+.btn--trial s {
+    margin: 0 4px;
+    font-weight: 500;
+    color: var(--grey);
+    text-decoration-color: var(--orange);
+    text-decoration-thickness: 2px;
+}
+
+.btn__sub {
+    font-family: var(--font-text);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: none;
+    color: var(--grey);
+}
+
 .btn--ghost:hover {
     box-shadow: inset 0 0 0 2px var(--lime);
 }
@@ -376,6 +403,24 @@ section {
     display: block;
     font-size: 13px;
     color: var(--grey);
+}
+
+.compare__freq {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 10px;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--bg);
+    background-color: var(--lime);
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.compare__freq--muted {
+    color: var(--grey);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 .compare__yes {
@@ -822,43 +867,6 @@ section {
     text-transform: uppercase;
 }
 
-/* 7. Питання */
-.faq__item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.faq__question {
-    position: relative;
-    padding: 16px 40px 16px 0;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none;
-}
-
-.faq__question::-webkit-details-marker {
-    display: none;
-}
-
-.faq__question::after {
-    content: '+';
-    position: absolute;
-    right: 0;
-    top: 10px;
-    font-size: 28px;
-    color: var(--lime);
-    transition: transform 0.3s;
-}
-
-.faq__item[open] .faq__question::after {
-    transform: rotate(45deg);
-}
-
-.faq__answer {
-    padding-bottom: 16px;
-    color: var(--grey);
-}
-
 /* Підвал */
 .footer {
     padding: 28px 0 96px;
@@ -1077,7 +1085,8 @@ section {
     }
 
     .compare__row--price b {
-        font-size: 20px;
+        font-size: 18px;
+        white-space: nowrap;
     }
 
     .compare__save {
