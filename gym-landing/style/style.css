@@ -973,23 +973,36 @@ section {
 }
 
 /* Якщо в системі вимкнені анімації — не рухаємо нічого */
+/* «Зменшення руху» в налаштуваннях телефона: прибираємо тільки сильний рух
+   (наближення фото, обертання, стрічку фото, пульс, відблиск),
+   а плавну появу блоків і «набігання» цифр залишаємо — без зсуву, тільки прозорість */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    .hero::before,
+    .bonus::before,
+    .bonus__icon,
+    .gallery,
+    .btn--pulse,
+    .payment__card--accent::after {
         animation: none !important;
-        transition: none !important;
     }
 
-    .js .appear,
+    .js .appear {
+        animation-name: vtm-fade-in;
+    }
+
     .js .reveal {
-        opacity: 1;
         transform: none;
+        transition: opacity 0.6s ease-out;
     }
 
     .gallery-wrap {
         overflow-x: auto;
     }
+}
+
+@keyframes vtm-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* ---------- Планшет ---------- */
@@ -1027,7 +1040,8 @@ section {
     }
 
     .hero::after {
-        background: linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 11, 0.6) 45%, rgba(11, 11, 11, 0.85) 100%);
+        /* на телефоні текст іде поверх фото — робимо фон темнішим, щоб читалося */
+        background: linear-gradient(180deg, rgba(11, 11, 11, 0.9) 0%, rgba(11, 11, 11, 0.8) 55%, var(--bg) 100%);
     }
 
     .hero__hook {

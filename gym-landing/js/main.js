@@ -216,7 +216,8 @@ function countUp(el) {
 const counters = document.querySelectorAll('[data-count]');
 const revealItems = document.querySelectorAll('.reveal');
 
-if ('IntersectionObserver' in window && !reduceMotion) {
+// Цифри й поява блоків — легкий рух, працюють і при «Зменшенні руху» в налаштуваннях
+if ('IntersectionObserver' in window) {
     const counterObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
