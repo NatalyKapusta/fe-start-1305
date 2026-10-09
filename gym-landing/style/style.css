@@ -215,127 +215,6 @@ section {
     gap: 12px;
 }
 
-.btn--ghost {
-    color: var(--white);
-    background-color: transparent;
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6);
-}
-
-/* Кнопка «Пробний день»: ціна з перекресленою старою + підпис що входить */
-.btn--trial {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 1.15;
-}
-
-.btn--trial s {
-    margin: 0 4px;
-    font-weight: 500;
-    color: var(--grey);
-    text-decoration-color: var(--orange);
-    text-decoration-thickness: 2px;
-}
-
-.btn__sub {
-    font-family: var(--font-text);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: none;
-    color: var(--grey);
-}
-
-.btn--ghost:hover {
-    box-shadow: inset 0 0 0 2px var(--lime);
-}
-
-.hero__text {
-    max-width: 360px;
-    font-size: 18px;
-    margin-bottom: 24px;
-}
-
-/* Бонус: картка з рамкою, що світиться і обертається */
-.bonus {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 22px 14px 14px;
-    margin-bottom: 20px;
-    border-radius: 22px;
-    overflow: hidden;
-    isolation: isolate;
-}
-
-.bonus::before {
-    content: '';
-    position: absolute;
-    inset: -150%;
-    z-index: -2;
-    background: conic-gradient(from 0deg, transparent 0 60%, var(--orange) 75%, var(--lime) 90%, transparent 100%);
-    animation: spin 4s linear infinite;
-}
-
-.bonus::after {
-    content: '';
-    position: absolute;
-    inset: 2px;
-    z-index: -1;
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(40, 30, 20, 0.95), rgba(15, 15, 15, 0.95));
-}
-
-.bonus__icon {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 28px;
-    color: var(--bg);
-    background: radial-gradient(circle at 30% 30%, #f4ff7a, var(--lime) 55%, #9fc000);
-    border-radius: 18px;
-    box-shadow: 0 0 24px rgba(243, 114, 45, 0.55);
-    animation: glow 2.4s ease-in-out infinite alternate;
-}
-
-.bonus__label {
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--orange);
-}
-
-.bonus__title {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-
-.bonus__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.bonus__tag {
-    padding: 2px 10px;
-    font-size: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 100px;
-}
-
 /* 2. Що входить */
 /* 2. Порівняння з повною карткою */
 .compare__table {
@@ -585,129 +464,6 @@ section {
     border-radius: 16px;
 }
 
-/* Плашка «Оплата частинами» на першому екрані */
-.pay-chip {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 8px 8px 10px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 100px;
-    backdrop-filter: blur(8px);
-}
-
-.pay-chip b {
-    color: var(--lime);
-}
-
-.pay-chip__icon {
-    width: 26px;
-    height: 26px;
-}
-
-.pay-chip__bank {
-    padding: 3px 10px;
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--white);
-    background-color: #3aa935;
-    border-radius: 100px;
-}
-
-/* 4. Зручна оплата */
-.payment__grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 12px;
-}
-
-.payment__card {
-    padding: 24px;
-    background-color: var(--bg-card);
-    border-radius: 24px;
-}
-
-.payment__card--accent {
-    position: relative;
-    color: var(--bg);
-    background-color: var(--lime);
-    overflow: hidden;
-}
-
-/* Легкий відблиск, що пробігає по картці */
-.payment__card--accent::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -40%;
-    width: 30%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-    transform: skewX(-20deg);
-    animation: shine 4s ease-in-out infinite;
-}
-
-.payment__title {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-.payment__sum {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 1.1;
-    margin: 4px 0 10px;
-}
-
-.payment__text {
-    color: var(--grey);
-}
-
-.payment__head {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 14px;
-}
-
-.payment__icon {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    padding: 6px;
-    background-color: var(--white);
-    border-radius: 16px;
-}
-
-.payment__bank {
-    font-weight: 700;
-}
-
-.payment__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.payment__list li {
-    padding: 6px 14px 6px 12px;
-    font-weight: 700;
-    background-color: rgba(11, 11, 11, 0.08);
-    border-radius: 100px;
-}
-
-.payment__list li::before {
-    content: '✓ ';
-}
-
 /* 5. Цифри */
 .facts {
     display: grid;
@@ -925,7 +681,6 @@ section {
 .fact.reveal:nth-child(2) { transition-delay: 0.1s; }
 .fact.reveal:nth-child(3) { transition-delay: 0.2s; }
 .fact.reveal:nth-child(4) { transition-delay: 0.3s; }
-.payment__card.reveal:nth-child(2) { transition-delay: 0.1s; }
 
 @keyframes fade-up {
     from {
@@ -943,15 +698,6 @@ section {
     to { transform: scale(1.12); }
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 14px rgba(243, 114, 45, 0.35); }
-    to { box-shadow: 0 0 32px rgba(243, 114, 45, 0.8); }
-}
-
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(219, 250, 5, 0.55); }
     70% { box-shadow: 0 0 0 18px rgba(219, 250, 5, 0); }
@@ -960,11 +706,6 @@ section {
 
 @keyframes gallery-move {
     to { transform: translateX(-50%); }
-}
-
-@keyframes shine {
-    0%, 60% { left: -40%; }
-    100% { left: 130%; }
 }
 
 @keyframes shake {
@@ -1060,24 +801,6 @@ section {
         display: block;
     }
 
-    .hero__text {
-        font-size: 16px;
-    }
-
-    .bonus {
-        display: flex;
-    }
-
-    .bonus__icon {
-        width: 56px;
-        height: 56px;
-        font-size: 24px;
-    }
-
-    .bonus__title {
-        font-size: 20px;
-    }
-
     .btn {
         width: 100%;
         text-align: center;
@@ -1126,22 +849,6 @@ section {
 
     .guest__new {
         font-size: 52px;
-    }
-
-    .pay-chip {
-        font-size: 14px;
-    }
-
-    .payment__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .payment__card {
-        padding: 20px;
-    }
-
-    .payment__title {
-        font-size: 28px;
     }
 
     .gallery__img {
