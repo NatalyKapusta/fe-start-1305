@@ -311,46 +311,6 @@ section {
     color: var(--grey);
 }
 
-.compare__summary {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px 24px;
-    font-size: 17px;
-}
-
-.compare__summary p:first-child {
-    flex: 1 1 420px;
-    color: var(--grey);
-}
-
-.compare__summary b {
-    color: var(--white);
-}
-
-.compare__save small {
-    display: block;
-    font-family: var(--font-text);
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: none;
-    text-align: center;
-}
-
-.compare__save {
-    text-align: center;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 24px;
-    text-transform: uppercase;
-    color: var(--bg);
-    background-color: var(--lime);
-    white-space: nowrap;
-}
-
 /* 3. Гостьовий візит */
 .guest__card {
     position: relative;
@@ -832,13 +792,7 @@ section {
         white-space: nowrap;
     }
 
-    .compare__save {
-        width: 100%;
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .guest__card {
+        .guest__card {
         padding: 22px;
         gap: 16px;
     }
